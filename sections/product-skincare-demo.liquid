@@ -1,0 +1,163 @@
+{% schema %}
+{
+  "name": "Smoothie Product Layout",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Smoothie Base"
+    },
+    {
+      "type": "text",
+      "id": "rating",
+      "label": "Rating Text",
+      "default": "4.8 Ratings | Based on 108 Reviews"
+    },
+    {
+      "type": "text",
+      "id": "discount",
+      "label": "Discount Label",
+      "default": "10% OFF"
+    }
+  ],
+  "presets": [
+    {
+        "name": "Demo Product Layout"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="smoothie-product">
+  <h1 class="smoothie-title">{{ section.settings.subtitle }}</h1>
+
+  <div class="smoothie-rating">
+    ⭐⭐⭐⭐⭐ <span>{{ section.settings.rating }}</span>
+  </div>
+
+  <div class="smoothie-price">
+    <span class="price">{{ product.price | money }}</span>
+    <span class="discount-badge">{{ section.settings.discount }}</span>
+  </div>
+
+  <p class="smoothie-desc">
+    Smoothie Base is a light, vitamin-rich moisturizer made especially for young skin (ages 6–14). 
+    It keeps the skin soft, hydrated, and balanced while protecting it from dryness and irritation. 
+    Use it on its own for daily moisture or mix it with your favorite Smoothie Drops for a fun, custom skincare blend!
+  </p>
+
+  <div class="smoothie-icons">
+    <div class="icon blue">
+      <img src="{{ 'kids-icon.png' | asset_url}}" alt="" width="20px" height="30px">
+      <p>Gentle & Safe for Kids</p>
+    </div>
+    <div class="icon pink">
+      <img src="{{ 'hydration-icon.png' | asset_url }}" alt="">
+      <p>Daily Skin Hydration</p>
+    </div>
+    <div class="icon yellow">
+      <img src="{{ 'vitamin-icon.png' | asset_url }}" alt="">
+      <p>Vitamin E & C Enriched</p>
+    </div>
+  </div>
+
+  <h3 class="smoothie-size">Size & Quantity:</h3>
+
+  <div class="size-selector">
+    {% for variant in product.variants %}
+      <button class="size-btn{% if forloop.first %} active{% endif %}">
+        {{ variant.title }}
+      </button>
+    {% endfor %}
+  </div>
+</div>
+<style>
+.smoothie-product {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.smoothie-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  display: inline-block;
+  position: relative;
+}
+.smoothie-title::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  background: #ffeb99;
+  left: 0;
+  bottom: 2px;
+  z-index: -1;
+}
+
+.smoothie-rating {
+  color: #555;
+  margin-top: 10px;
+}
+
+.smoothie-price {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.discount-badge {
+  background: #3b82f6;
+  color: white;
+  font-size: 0.9rem;
+  padding: 4px 10px;
+  border-radius: 8px;
+  margin-left: 10px;
+}
+
+.smoothie-desc {
+  color: #555;
+  margin: 20px 0;
+  line-height: 1.6;
+}
+
+.smoothie-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.smoothie-icons .icon {
+  padding: 15px;
+  border-radius: 12px;
+  width: 150px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.icon.blue { background-color: #dbeafe; }
+.icon.pink { background-color: #fce7f3; }
+.icon.yellow { background-color: #fef9c3; }
+
+.size-selector {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.size-btn {
+  border: 2px solid #ddd;
+  border-radius: 30px;
+  padding: 10px 20px;
+  background: white;
+  cursor: pointer;
+  font-weight: 500;
+}
+.size-btn.active, .size-btn:hover {
+  border-color: #ec4899;
+  color: #ec4899;
+}
+</style>

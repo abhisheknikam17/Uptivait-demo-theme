@@ -1,0 +1,93 @@
+<style>
+    .hero-subhead-{{ section.id }}-{{ block.id }}{
+        width: 100%;
+        position: relative;
+        /* display: flex; */
+        text-align: {{block.settings.subheadalign}};
+    }
+    .subhead-text{
+        font-size: {{block.settings.subhead_size}}px;
+        font-weight:400 !important;
+        /* text-align:{{block.settings.subheadalign}}; */
+        /* margin-bottom: 10px; */
+        
+    }
+    @media screen and (max-width: 749px){
+        .subhead-text{
+font-size:{{ block.settings.mobsubhead_size }}px ; 
+font-weight: 400 !important;  
+        }
+        
+    }
+</style>
+
+
+<div class="hero-subhead-{{ section.id }}-{{block.id}}" {{ block.shopify_attributes }}>
+    <h3 class="subhead-text" style="color: {{ block.settings.subheadcolor }};">
+        {{block.settings.subheading}}
+    </h3>
+</div>
+
+{% schema %}
+{
+    "name": "Up Suheading",
+    "settings": [
+        {
+            "type": "text",
+            "id": "subheading",
+            "label": "Subheading"
+        },
+        {
+            "type": "color",
+            "id": "subheadcolor",
+            "label": "Subheading Color",
+            "default":"#1A1A1A"
+        },
+        {
+            "type": "range",
+            "label": "Font Size",
+            "id": "subhead_size",
+            "min": 0,
+            "max": 50,
+            "step": 1,
+            "unit" :"px",
+            "default": 24
+        },
+        {
+            "type": "range",
+            "label": "Font Size (Mobile)",
+            "id": "mobsubhead_size",
+            "min": 0,
+            "max": 50,
+            "step": 1,
+            "unit" :"px",
+            "default": 24
+        },
+        {
+        "type":"select",
+        "id": "subheadalign",
+        "label":"Subheading Align",
+        "default": "center",
+        "options": [
+            {
+                "value": "left",
+                "label":"Left"
+            },
+            {
+                "value": "center",
+                "label":"Center"
+            },
+            {
+                "value": "right",
+                "label":"Right"
+            }
+        ] 
+    }
+    ],
+    "presets": [
+        {
+            "name": "Up-Subheading"
+        }
+    ]
+}
+{% endschema %}

@@ -1,0 +1,627 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero_section_LMe8pi": {
+      "type": "Hero-Section",
+      "blocks": {
+        "subheading_hmAzAp": {
+          "type": "_subheading",
+          "name": "Up-Subheading",
+          "settings": {
+            "subheading": "Minimal Jewelry.",
+            "subheadcolor": "#1a1a1a",
+            "subhead_size": 24,
+            "mobsubhead_size": 20,
+            "subheadalign": "center"
+          },
+          "blocks": {}
+        },
+        "customheading_KzgmMW": {
+          "type": "_customheading",
+          "name": "Up-Heading",
+          "settings": {
+            "text": "Maximum Statement.",
+            "textsize": 68,
+            "textsize_mobile": 36,
+            "left_rightpadding": false,
+            "headingalign": "center",
+            "headingalign_mob": "center",
+            "headingcolor": "#1a1a1a",
+            "headingopacity": 1,
+            "bottomgap": 10
+          },
+          "blocks": {}
+        },
+        "herotext_cm7bKG": {
+          "type": "_herotext",
+          "name": "Hero-Subtext",
+          "settings": {
+            "hero_text": "The Uptavit Ring Chain where timeless elegance meets modern simplicity.",
+            "text_size": 16,
+            "mobile_size": 14,
+            "subtextcolor": "#1a1a1a",
+            "subtextalign": "center",
+            "subtextalign_mob": "center"
+          },
+          "blocks": {}
+        },
+        "buttons_CiGqN9": {
+          "type": "_buttons",
+          "name": "Buttons1",
+          "settings": {
+            "buttontxt": "Shop Now",
+            "buttonurl": "shopify://collections/all",
+            "buttonalign": "center",
+            "buttonalign_mob": "center",
+            "button_width": "inline-block"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "subheading_hmAzAp",
+        "customheading_KzgmMW",
+        "herotext_cm7bKG",
+        "buttons_CiGqN9"
+      ],
+      "name": "Up Banner",
+      "settings": {
+        "image": "shopify://shop_images/Group_1413372150_2.png",
+        "mobile_img": "shopify://shop_images/mobile-uptavit.png",
+        "brightness_img": 1,
+        "padding_top": 51,
+        "margin_top": 15,
+        "margin_bottom": 3,
+        "mobilebannerheight": 90,
+        "desktopbannerheight": 100,
+        "enable_mobile_img": "yes",
+        "videourl": "",
+        "content_direction_column": "Column_Center",
+        "content_direction_row": "Row_Left",
+        "content_gap": "small",
+        "opacity": "off"
+      }
+    },
+    "brand_slider_WTqn47": {
+      "type": "Brand-slider",
+      "blocks": {
+        "brand_logo_tMFRCK": {
+          "type": "brand_logo",
+          "settings": {
+            "brand_image": "shopify://shop_images/Vector.png"
+          }
+        },
+        "brand_logo_npbXRY": {
+          "type": "brand_logo",
+          "settings": {
+            "brand_image": "shopify://shop_images/COS_LOGO_BERRY_2024_1_3af3041d-a81e-4185-9bfe-f5c391b82aa0.png"
+          }
+        },
+        "brand_logo_D67JVT": {
+          "type": "brand_logo",
+          "settings": {
+            "brand_image": "shopify://shop_images/peoplemag.png"
+          }
+        },
+        "brand_logo_wmJpkd": {
+          "type": "brand_logo",
+          "settings": {
+            "brand_image": "shopify://shop_images/Time_Magazine_logo_svg_e1228896-bf1b-477c-b24e-c721a8aa257c.png"
+          }
+        },
+        "brand_logo_6XmL6k": {
+          "type": "brand_logo",
+          "settings": {
+            "brand_image": "shopify://shop_images/newyorkerlogo.png"
+          }
+        }
+      },
+      "block_order": [
+        "brand_logo_tMFRCK",
+        "brand_logo_npbXRY",
+        "brand_logo_D67JVT",
+        "brand_logo_wmJpkd",
+        "brand_logo_6XmL6k"
+      ],
+      "name": "Brand Slider",
+      "settings": {
+        "background_color": "#fff"
+      }
+    },
+    "zig_zagsection_WCwBGi": {
+      "type": "zig-zagsection",
+      "blocks": {
+        "customheading_FzhmE8": {
+          "type": "_customheading",
+          "name": "Up-Heading",
+          "settings": {
+            "text": "One Chain. Endless Possibilities.",
+            "textsize": 40,
+            "textsize_mobile": 32,
+            "left_rightpadding": false,
+            "headingalign": "left",
+            "headingalign_mob": "center",
+            "headingcolor": "#1a1a1a",
+            "headingopacity": 1,
+            "bottomgap": 10
+          },
+          "blocks": {}
+        },
+        "herotext_4gYecJ": {
+          "type": "_herotext",
+          "name": "Hero-Subtext",
+          "settings": {
+            "hero_text": "Designed with a clean aesthetic and crafted for everyday wear, the Uptavit Ring Chain is more than an accessory — it’s a reflection of subtle confidence. Neutral enough to pair with any outfit, yet bold enough to stand out.",
+            "text_size": 16,
+            "mobile_size": 14,
+            "subtextcolor": "#1a1a1a",
+            "subtextalign": "left",
+            "subtextalign_mob": "center"
+          },
+          "blocks": {}
+        },
+        "buttons_xG4WEM": {
+          "type": "_buttons",
+          "name": "Buttons1",
+          "settings": {
+            "buttontxt": "Discover",
+            "buttonurl": "shopify://collections/all",
+            "buttonalign": "left",
+            "buttonalign_mob": "center",
+            "button_width": "inline-block"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "customheading_FzhmE8",
+        "herotext_4gYecJ",
+        "buttons_xG4WEM"
+      ],
+      "name": "Zig-zag Section",
+      "settings": {
+        "zig_img": "shopify://shop_images/Product_picture_4_2.png",
+        "bgcolor": "",
+        "bgcolordesktop": "",
+        "flex_direction": "row",
+        "width": "80"
+      }
+    },
+    "brand_info_tJLQrQ": {
+      "type": "Brand-info",
+      "blocks": {
+        "brand_image_p6dVjB": {
+          "type": "Brand-Image",
+          "settings": {
+            "brand_img": "shopify://shop_images/zigimage2.png",
+            "mobilebrand_img": "shopify://shop_images/mobilebrandimg.png"
+          }
+        },
+        "brand_info_KrWtXY": {
+          "type": "Brand-Info",
+          "settings": {
+            "info_heading": "Your new everyday essential.",
+            "heading_size": 40,
+            "mobheading_size": 32,
+            "info_textarea": "Designed with a clean aesthetic and crafted for everyday wear, the Uptavit Ring Chain is more than an accessory",
+            "infosubtext": 16,
+            "mobsubtext": 14,
+            "info_image1": "shopify://shop_images/Vector2.png",
+            "info_text1": "Timeless Design",
+            "info_image2": "shopify://shop_images/Vector3.png",
+            "info_text2": "Premium Finish",
+            "info_image3": "shopify://shop_images/Group_1413372140.png",
+            "info_text3": "Versatile Wear",
+            "info_image4": "shopify://shop_images/Vector4.png",
+            "info_text4": "Effortless Confidence",
+            "info_image5": "shopify://shop_images/Vector5.png",
+            "info_text5": "Natural Aesthetic"
+          }
+        },
+        "button_fFpeJy": {
+          "type": "button",
+          "settings": {
+            "button_text": "Discover",
+            "buttonurl": "shopify://collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "brand_image_p6dVjB",
+        "brand_info_KrWtXY",
+        "button_fFpeJy"
+      ],
+      "name": "Brand Info Section",
+      "settings": {}
+    },
+    "reviews_section_cgyjgV": {
+      "type": "Reviews-section",
+      "blocks": {
+        "image_7d9tp6": {
+          "type": "image",
+          "settings": {
+            "review_image": "shopify://shop_images/review_pic.png"
+          }
+        },
+        "review_section_cPMzd4": {
+          "type": "review_section",
+          "settings": {
+            "rating": 5,
+            "review_text": "\"I went from buying yarn I never used to completing 12 beautiful projects this year. The difference? Having everything I need in one place.\"",
+            "profile_image": "shopify://shop_images/profilepic.png",
+            "reviewer_name": "-Jessica L."
+          }
+        },
+        "image_ztFdFG": {
+          "type": "image",
+          "settings": {
+            "review_image": "shopify://shop_images/review_pic.png"
+          }
+        },
+        "review_section_YBaNLq": {
+          "type": "review_section",
+          "settings": {
+            "rating": 5,
+            "review_text": "\"I went from buying yarn I never used to completing 12 beautiful projects this year. The difference? Having everything I need in one place.\"",
+            "profile_image": "shopify://shop_images/profilepic.png",
+            "reviewer_name": "-Jessica L."
+          }
+        },
+        "image_FWDcmc": {
+          "type": "image",
+          "settings": {
+            "review_image": "shopify://shop_images/review_pic.png"
+          }
+        },
+        "review_section_LkiBgd": {
+          "type": "review_section",
+          "settings": {
+            "rating": 5,
+            "review_text": "\"I went from buying yarn I never used to completing 12 beautiful projects this year. The difference? Having everything I need in one place.\"",
+            "profile_image": "shopify://shop_images/profilepic.png",
+            "reviewer_name": "-Jessica L."
+          }
+        }
+      },
+      "block_order": [
+        "image_7d9tp6",
+        "review_section_cPMzd4",
+        "image_ztFdFG",
+        "review_section_YBaNLq",
+        "image_FWDcmc",
+        "review_section_LkiBgd"
+      ],
+      "name": "Reviews Carousel",
+      "settings": {
+        "pic_slide_desktop": 5,
+        "pic_slides_mobile": 1
+      }
+    },
+    "faq_section_fpAQr3": {
+      "type": "FAQ-section",
+      "blocks": {
+        "faq_CtUEr7": {
+          "type": "faq",
+          "settings": {
+            "question": "How flexible is the subscription?",
+            "answer": "<p>Lorem ipsum<strong> dolor sit amet consectetur.</strong> Lorem ipsum dolor sit amet consectetur. <br/>Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur. <br/>Lorem ipsum dolor sit amet consectetur. <br/>Lorem ipsum dolor sit amet consectetur.<br/><br/>Lorem ipsum dolor sit amet consectetur. <br/>Lorem ipsum dolor sit amet consectetur.</p>"
+          }
+        },
+        "faq_4nMNHD": {
+          "type": "faq",
+          "settings": {
+            "question": "What if I want to change size/color?",
+            "answer": "<p>Results may vary, but many users report feeling the benefits of the UPTAVIT Necklace within a few days to a few weeks of use<br/><br/></p>"
+          }
+        },
+        "faq_CA7GYL": {
+          "type": "faq",
+          "settings": {
+            "question": "Do I get discounts as a subscriber?",
+            "answer": "<p>Results may vary, but many users report feeling the benefits of the UPTAVIT Necklace within a few days to a few weeks of use<br/><br/></p>"
+          }
+        },
+        "faq_UXcjkA": {
+          "type": "faq",
+          "settings": {
+            "question": "How long does it tak to see results with the UPTAVIT Necklace",
+            "answer": "<p>Results may vary, but many users report feeling the benefits of the UPTAVIT Necklace within a few days to a few weeks of use.</p>"
+          }
+        },
+        "faq_XKJcqf": {
+          "type": "faq",
+          "settings": {
+            "question": "What health benefits can I expect?",
+            "answer": "<p>Many users report improved sleep, reduced stress, enhanced energy levels, and better focus. While individual results vary, the necklace is designed to support your body’s natural healing and balance.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_CtUEr7",
+        "faq_4nMNHD",
+        "faq_CA7GYL",
+        "faq_UXcjkA",
+        "faq_XKJcqf"
+      ],
+      "name": "FAQ Section",
+      "settings": {
+        "faq_img": "shopify://shop_images/faqimg_2d8f2cb1-9d80-4fc5-a90c-5b8d9ec2c92b.png",
+        "heading_faq": "Frequently asked question",
+        "margin_top": 40,
+        "margin_bottom": 32
+      }
+    },
+    "zig_zagsection_VyFR3m": {
+      "type": "zig-zagsection",
+      "blocks": {
+        "customheading_ibTePd": {
+          "type": "_customheading",
+          "name": "Up-Heading",
+          "settings": {
+            "text": "Where Wellness Meets Style",
+            "textsize": 40,
+            "textsize_mobile": 32,
+            "left_rightpadding": false,
+            "headingalign": "left",
+            "headingalign_mob": "center",
+            "headingcolor": "#1a1a1a",
+            "headingopacity": 1,
+            "bottomgap": 10
+          },
+          "blocks": {}
+        },
+        "herotext_cgYFYT": {
+          "type": "_herotext",
+          "name": "Hero-Subtext",
+          "settings": {
+            "hero_text": "At Uptavit, we believe taking care of your health should be as natural as putting on your favorite piece of jewelry. That’s why we created the Uptavit Ring Chain — a simple, wearable way to support your body with essential vitamins, while looking effortlessly stylish.",
+            "text_size": 16,
+            "mobile_size": 14,
+            "subtextcolor": "#1a1a1a",
+            "subtextalign": "left",
+            "subtextalign_mob": "center"
+          },
+          "blocks": {}
+        },
+        "buttons_dmP4eR": {
+          "type": "_buttons",
+          "name": "Buttons1",
+          "settings": {
+            "buttontxt": "Discover",
+            "buttonurl": "shopify://collections/all",
+            "buttonalign": "left",
+            "buttonalign_mob": "center",
+            "button_width": "inline-block"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "customheading_ibTePd",
+        "herotext_cgYFYT",
+        "buttons_dmP4eR"
+      ],
+      "name": "Zig-zag Section",
+      "settings": {
+        "zig_img": "shopify://shop_images/Product_picture_1.png",
+        "bgcolor": "",
+        "bgcolordesktop": "",
+        "flex_direction": "row",
+        "width": "80"
+      }
+    },
+    "brand_quote_mVDyAD": {
+      "type": "brand-quote",
+      "name": "Brand Quote",
+      "settings": {
+        "quote": "\"We design products that don’t just work — they blend into your life seamlessly, helping you feel confident, healthy, and in control.\"",
+        "textsize": 40
+      }
+    },
+    "zig_zagsection_mkepae": {
+      "type": "zig-zagsection",
+      "blocks": {
+        "customheading_Tt4DNn": {
+          "type": "_customheading",
+          "name": "Up-Heading",
+          "settings": {
+            "text": "Why We Exist",
+            "textsize": 40,
+            "textsize_mobile": 32,
+            "left_rightpadding": false,
+            "headingalign": "left",
+            "headingalign_mob": "left",
+            "headingcolor": "#1a1a1a",
+            "headingopacity": 1,
+            "bottomgap": 10
+          },
+          "blocks": {}
+        },
+        "herotext_7GUcJJ": {
+          "type": "_herotext",
+          "name": "Hero-Subtext",
+          "settings": {
+            "hero_text": "Traditional supplements can be bulky, easy to forget, or feel clinical. We wanted to change that. The Uptavit Ring Chain transforms wellness into something you can wear proudly — a symbol of health and style in one.",
+            "text_size": 16,
+            "mobile_size": 14,
+            "subtextcolor": "#1a1a1a",
+            "subtextalign": "left",
+            "subtextalign_mob": "left"
+          },
+          "blocks": {}
+        },
+        "buttons_xnEL7k": {
+          "type": "_buttons",
+          "name": "Buttons1",
+          "settings": {
+            "buttontxt": "Discover",
+            "buttonurl": "shopify://pages/benefits",
+            "buttonalign": "left",
+            "buttonalign_mob": "center",
+            "button_width": "block"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "customheading_Tt4DNn",
+        "herotext_7GUcJJ",
+        "buttons_xnEL7k"
+      ],
+      "name": "Zig-zag Section",
+      "settings": {
+        "zig_img": "shopify://shop_images/Product_picture_3.png",
+        "bgcolor": "#EBE3D7",
+        "bgcolordesktop": "",
+        "flex_direction": "row-reverse",
+        "width": "80"
+      }
+    },
+    "hero_section_CENwwd": {
+      "type": "Hero-Section",
+      "blocks": {
+        "subheading_yf6APQ": {
+          "type": "_subheading",
+          "name": "Up-Subheading",
+          "settings": {
+            "subheading": "Minimal Jewelry.",
+            "subheadcolor": "#ffffff",
+            "subhead_size": 24,
+            "mobsubhead_size": 20,
+            "subheadalign": "center"
+          },
+          "blocks": {}
+        },
+        "customheading_bDa9bJ": {
+          "type": "_customheading",
+          "name": "Up-Heading",
+          "settings": {
+            "text": "Ready to Elevate Your Style?",
+            "textsize": 40,
+            "textsize_mobile": 28,
+            "left_rightpadding": false,
+            "headingalign": "center",
+            "headingalign_mob": "center",
+            "headingcolor": "#ffffff",
+            "headingopacity": 1,
+            "bottomgap": 10
+          },
+          "blocks": {}
+        },
+        "herotext_MeYUNp": {
+          "type": "_herotext",
+          "name": "Hero-Subtext",
+          "settings": {
+            "hero_text": "Lorem ipsum dolor sit amet consectetur. Odio nunc consectetur mattis faucibus diam at. Malesuada mauris nibh tristique tempus.",
+            "text_size": 15,
+            "mobile_size": 14,
+            "subtextcolor": "#ffffff",
+            "subtextalign": "center",
+            "subtextalign_mob": "center"
+          },
+          "blocks": {}
+        },
+        "buttons_mekBkU": {
+          "type": "_buttons",
+          "name": "Buttons1",
+          "settings": {
+            "buttontxt": "Shop Now",
+            "buttonurl": "shopify://collections/all",
+            "buttonalign": "center",
+            "buttonalign_mob": "center",
+            "button_width": "inline-block"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "subheading_yf6APQ",
+        "customheading_bDa9bJ",
+        "herotext_MeYUNp",
+        "buttons_mekBkU"
+      ],
+      "name": "Up Banner",
+      "settings": {
+        "image": "shopify://shop_images/Product_picture_5.png",
+        "mobile_img": "shopify://shop_images/bottombanner-mob.png",
+        "brightness_img": 0.5,
+        "padding_top": 88,
+        "margin_top": 91,
+        "margin_bottom": 70,
+        "mobilebannerheight": 68,
+        "desktopbannerheight": 100,
+        "enable_mobile_img": "yes",
+        "videourl": "",
+        "content_direction_column": "Column_Center",
+        "content_direction_row": "Row_Left",
+        "content_gap": "small",
+        "opacity": "off"
+      }
+    },
+    "features_info_cMGA8L": {
+      "type": "Features-info",
+      "blocks": {
+        "feature_bdqrH4": {
+          "type": "feature",
+          "settings": {
+            "info_image": "shopify://shop_images/Group_1413372139.png",
+            "info_text": "Free Shipping"
+          }
+        },
+        "feature_UxjkBT": {
+          "type": "feature",
+          "settings": {
+            "info_image": "shopify://shop_images/Group_1413372141.png",
+            "info_text": "30-Day Returns"
+          }
+        },
+        "feature_7b48qW": {
+          "type": "feature",
+          "settings": {
+            "info_image": "shopify://shop_images/Group.png",
+            "info_text": "Secure Checkout"
+          }
+        },
+        "feature_ECUtnP": {
+          "type": "feature",
+          "settings": {
+            "info_image": "shopify://shop_images/Group_1413372142.png",
+            "info_text": "Fast Delivery"
+          }
+        }
+      },
+      "block_order": [
+        "feature_bdqrH4",
+        "feature_UxjkBT",
+        "feature_7b48qW",
+        "feature_ECUtnP"
+      ],
+      "name": "Features-Info",
+      "settings": {
+        "width": 40,
+        "height": 32
+      }
+    }
+  },
+  "order": [
+    "hero_section_LMe8pi",
+    "brand_slider_WTqn47",
+    "zig_zagsection_WCwBGi",
+    "brand_info_tJLQrQ",
+    "reviews_section_cgyjgV",
+    "faq_section_fpAQr3",
+    "zig_zagsection_VyFR3m",
+    "brand_quote_mVDyAD",
+    "zig_zagsection_mkepae",
+    "hero_section_CENwwd",
+    "features_info_cMGA8L"
+  ]
+}

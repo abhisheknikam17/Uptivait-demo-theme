@@ -1,0 +1,268 @@
+<style>
+  .review-card{
+  border: 1px solid #FBE9D7;
+  border-radius: 24px;
+  height: 628px;
+  padding: 30px 20px;
+  }
+  .reviewer-img{
+    width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 8px;
+  }
+  .splide__arrows{display: block;}
+
+.splide__pagination{
+  display: block;
+  margin: 30px 0;
+      bottom: -6.8em !important;
+    left: 47.5% !important;
+}
+.splide__arrow--prev {
+    left: 44%;
+}
+.splide__arrow{
+    background-color: #fff;
+    border: 1px solid #000000;
+   width: 56px;
+   height: 56px;
+  top: 100% !important;
+  transform: translateY(50%) !important;
+}
+.splide__arrow svg{
+     /* padding: 21px 24px !important; */
+}
+.splide__arrow--next{
+  right: 43%;
+}
+.splide:not(.is-overflow) .splide__pagination {
+    display: block;
+}
+.splide__pagination {
+    bottom: -5em;
+    left: 46%;
+    padding: 0 1em;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+}
+.splide__pagination:active{
+    width: 5px;
+}
+.review-heading{
+  font-size: 48px;
+  text-align: center;
+  font-weight: 500;
+  margin-top: 70px;
+  /* margin-block-start: 0 !important; */
+}
+.review-maincontainer{
+  margin-top: 70px ;
+  margin-bottom: 100px;
+  padding: 0 15px;
+}
+
+@media screen and ( max-width: 750px){
+  .review-card{
+    padding: 30px 15px;
+    height: 350px;
+  }
+  .review-heading{
+    font-size: 32px;
+  }
+  .splide__arrow--next{
+  right: 16% !important;
+}
+.splide__arrow .splide__arrow--perv{
+    left: 25% !important;
+}
+.splide__pagination{
+    left: 39%;
+}
+}
+</style>
+
+
+
+<div class="review-maincontainer">
+<section class="splide" id="splide_review-{{ section.id }}" aria-label="Reviews Slider">
+     <h1 class="review-heading">What Our Customers Say</h1> 
+  <div class="splide__track">
+    <ul class="splide__list">
+      {% for block in section.blocks %}
+        {% comment %} {% if block.type == 'image' 'or' block.type =='textarea' %} {% endcomment %}
+         {% if block.type == 'image'  %}
+
+        <li class="splide__slide">
+          <img src="{{ block.settings.review_image | image_url: width: 240 }}" alt="" width="240" height="auto" loading="lazy">
+        </li>
+        {% endif %}
+        {% if block.type == 'review_section' %}
+            <li class="splide__slide">
+         <div class="reviews-wrapper" width="240px">
+ 
+    <div class="review-card" {{ block.shopify_attributes }}>
+       <div class="review-stars">
+        {% for i in (1..block.settings.rating) %}
+          ⭐
+        {% endfor %}
+      </div> 
+
+
+      <p class="review-text">{{ block.settings.review_text }}</p>
+      <div class="reviewer">
+         {% if block.settings.reviewer_photo  %}
+    <img
+      src="{{ block.settings.reviewer_photo | image_url: width: 45 }}"
+      alt="{{ block.settings.reviewer_name }}"
+      class="reviewer-img"
+      width="45"
+    height="45"
+    >
+         {% endif %}
+        <p class="reviewer-name">{{ block.settings.reviewer_name }}</p>
+      </div>
+    </div>
+  
+</div>
+        </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+</div>
+
+<script>
+//   document.addEventListener( 'DOMContentLoaded', function() {
+//     var splide = new Splide( '.splide' );
+//     splide.mount();
+//   } );
+
+document.addEventListener('DOMContentLoaded', function () {
+    const isMobile = window.innerWidth <= 768;
+    new Splide('#splide_review-{{ section.id }}', {
+        type: 'loop',
+        perPage: {{ section.settings.pic_slide_desktop | default: 6}},
+        gap: '30px',
+        autoplay: false,
+        autoPlaySpeed: 1000,
+        pauseOnHover: true,
+         easing: 'ease',
+         focus: 0,
+         pagination: true,
+         arrows: true,
+        autoScroll: {
+            speed: 1
+        },
+        breakpoints: {
+            1024: {
+                perPage: 3
+            },
+            768: {
+                perPage: 2,
+                gap: '18px'
+            }
+        }
+    }).mount();
+});
+</script>
+
+{% schema %}
+{
+    "name": "Reviews Section",
+    "settings": [
+        {
+            "type": "range",
+            "id": "pic_slide_desktop",
+            "label": "Number of Slides (Desktop)",
+            "step": 1,
+            "min": 1,
+            "max": 12,
+            "default": 5
+
+        },
+        {
+          "type": "range",
+          "id": "pic_slides_mobile",
+          "label": "Number of Slides(Mobile)",
+          "step": 1,
+          "min": 1,
+          "max": 4,
+          "default" : 1
+          
+        }
+          
+        ],
+        "blocks": [
+            
+            {
+                "type": "image",
+                "name": "Image",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "review_image",
+                        "label": "Review Image"
+                    }
+                ]
+            },
+            {
+                "type": "review_section",
+                "name": "Review Section",
+                "settings": [
+                    {
+                        "type": "range",
+                        "id": "rating",
+                        "label": "Star Rating",
+                        "min": 1,
+                        "max": 5,
+                        "step": 0.5,
+                        "default": 5
+                    },
+                    {
+                        "type": "textarea",
+                        "id": "review_text",
+                        "label": "Review Text"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "profile_image",
+                        "label": "Profile Image"
+                    },
+                    {
+                        "type": "text",
+                        "id": "reviewer_name",
+                        "label": "Reviewer Name",
+                        "default": "-Jessica L."
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Reviews Carousel"
+            }
+        ]
+}
+{% endschema %}
+
+
+
+
+      {% comment %} {%- for i in (1..full_stars) -%}
+  <svg class="star full" viewBox="0 0 24 24" width="20" height="20" fill="#FACC15"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.884 1.468 8.31L12 18.896l-7.404 4.604 1.468-8.31L0 9.306l8.332-1.151z"/></svg>
+{%- endfor -%}
+{%- if has_half_star == 1 -%}
+  <svg class="star half" viewBox="0 0 24 24" width="20" height="20">
+    <defs>
+      <linearGradient id="half">
+        <stop offset="50%" stop-color="#FACC15"/>
+        <stop offset="50%" stop-color="#E5E7EB"/>
+      </linearGradient>
+    </defs>
+    <path fill="url(#half)" d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.884 1.468 8.31L12 18.896l-7.404 4.604 1.468-8.31L0 9.306l8.332-1.151z"/>
+  </svg>
+{%- endif -%} {% endcomment %}

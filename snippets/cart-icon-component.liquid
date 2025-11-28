@@ -1,0 +1,37 @@
+{%- doc -%}
+  Renders the cart icon, which displays the number of items in the cart via a bubble.
+{%- enddoc -%}
+<cart-icon
+  class="
+    header-actions__cart-icon
+    {% unless cart == empty %} header-actions__cart-icon--has-cart{% endunless %}
+  "
+  data-testid="cart-icon"
+>
+  <span
+    class="svg-wrapper"
+    aria-hidden="true"
+  >
+    {% comment %} {{ 'icon-cart.svg' | inline_asset_content }} {% endcomment %}
+      
+<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.66667 14.8056C8.66667 15.4059 8.18368 15.8889 7.58333 15.8889C6.98299 15.8889 6.5 15.4059 6.5 14.8056C6.5 14.2052 6.98299 13.7222 7.58333 13.7222C8.18368 13.7222 8.66667 14.2052 8.66667 14.8056ZM17.3333 14.8056C17.3333 14.2052 17.8163 13.7222 18.4167 13.7222C19.017 13.7222 19.5 14.2052 19.5 14.8056C19.5 15.4059 19.017 15.8889 18.4167 15.8889C17.8163 15.8889 17.3333 15.4059 17.3333 14.8056ZM14.5437 2.53094C14.3406 2.18608 14.458 1.74403 14.801 1.54303C15.1486 1.34207 15.591 1.45844 15.7896 1.80298L20.6375 10.1111H25.2778C25.675 10.1111 26 10.4361 26 10.8333C26 11.2306 25.675 11.5556 25.2778 11.5556H24.1944L21.4906 22.3663C21.1295 23.6528 20.0146 24.5556 18.6875 24.5556H7.27187C5.98542 24.5556 4.82986 23.6528 4.50847 22.3663L1.80556 11.5556H0.722222C0.323375 11.5556 0 11.2306 0 10.8333C0 10.4361 0.323375 10.1111 0.722222 10.1111H5.3625L10.2104 1.80298C10.409 1.45844 10.8514 1.34207 11.199 1.54303C11.542 1.74403 11.6594 2.18608 11.4563 2.53094L7.03715 10.1111H18.9628L14.5437 2.53094ZM22.7049 11.5556H3.29424L5.90868 22.0187C6.07118 22.6597 6.64896 23.1111 7.27187 23.1111H18.6875C19.351 23.1111 19.9288 22.6597 20.0913 22.0187L22.7049 11.5556Z" fill="#363636"/>
+</svg>
+
+  </span>
+
+  {% render 'cart-bubble', limit: 100, live_region: true, test_id: test_id %}
+</cart-icon>
+
+{% stylesheet %}
+  cart-icon:has(.cart-bubble__text-count:empty) {
+    --cart-bubble-size: 10px;
+    --cart-bubble-top: 9px;
+    --cart-bubble-right: 9px;
+
+    .svg-wrapper {
+      --cart-bubble-top: 4px;
+      --cart-bubble-right: 4px;
+    }
+  }
+{% endstylesheet %}

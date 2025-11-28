@@ -1,0 +1,124 @@
+{% style %}
+    .feature_container-{{ section.id }}{
+        width: 100%;
+        margin: auto;
+        margin-top: 47px;
+        margin-bottom: 47px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 115px;
+    }
+    
+    .feature_wrapper{
+        display: flex;
+        /* width: 100%; */
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 25px;
+        text-align: center;
+    }
+    
+    .feature_image-{{ section.id }}{
+        /* width: {{ section.settings.width }}px;
+        height: {{ section.settings.height }}px; */
+        object-fit: contain;
+        margin-bottom: 10px;
+    }
+    
+    @media screen and (max-width: 749px) {
+        .feature_container-{{ section.id }}{
+            display: flex;
+            flex-direction: row !important;
+            gap: 20px;
+           /* grid-template-columns: repeat( 2, 1fr); */ 
+            /* flex-grow: 1; */
+            /* justify-content: space-around; */
+            /* /* margin-top:10px; */
+            margin-bottom: 25px;
+            /* flex-shrink: auto; */
+            flex-wrap: wrap;
+        }
+        /* Change: Set feature_wrapper to 48% width for two columns on mobile */
+        
+        .feature_wrapper {
+            width: 45% !important;
+            margin-bottom: 20px;
+        }
+       
+    }
+{% endstyle %}
+
+<div class="feature_container-{{ section.id }} ">
+    {% for block in section.blocks %}
+        <div class="feature_wrapper" {{ block.shopify_attributes }}>
+            {% if block.settings.info_image %}
+                <img src="{{ block.settings.info_image | image_url: width: 45 }}" alt="Info Image" loading="lazy" class="feature_image-{{ section.id }}-{{ block.id }}"  width="40"  style="width: {{ section.settings.width }}px; height: {{ section.settings.height }}px; "
+        height= "40">
+            {% endif %}
+            {% if block.settings.info_text %}
+                <p>{{ block.settings.info_text }}</p>
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>
+<!-- No additional code needed at $PLACEHOLDER$.
+The text appears sideways because your blocks are defined separately for image and text.
+You should combine both image and text in a single block for each feature.
+
+Update your schema blocks to have both image and text in one block: -->
+
+{% schema %}
+{
+    "name": "Features Info",
+     "settings": [
+        {
+            "type": "range",
+            "id": "width",
+            "label": "Width",
+            "min": 20,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "default": 40
+        },
+        {
+            "type": "range",
+            "id": "height",
+            "label": "height",
+            "min": 20,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "default": 32
+        }
+     ],
+    "blocks": [
+        {
+            "type": "feature",
+            "name": "Feature",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "info_image",
+                    "label": "Insert Image here"
+                },
+                {
+                    "type": "text",
+                    "id": "info_text",
+                    "label": "Type here"
+                }
+                
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Features Info"
+        }
+    ]
+}
+{% endschema %}
+
+

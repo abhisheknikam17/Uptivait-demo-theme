@@ -1,0 +1,129 @@
+<style>
+    .button-cont-{{block.id}}{
+        display: flex;
+        flex-direction: row;
+        justify-content: {{block.settings.buttonalign}};
+        
+    }
+    .btn-style{
+      border: none;
+      color: #ffffff;
+      background-color: #1A1A1A;
+      padding: 16px 32px;
+      border-radius: 24px;
+      font-size: 16px;
+      font-weight: 500;
+      margin-top: 18px;
+      margin-right:18px;
+      cursor: pointer;
+     
+    }
+    .btn-style:active{
+        background-color: hsl(0, 0%, 30%);
+    }
+    @media screen and (max-width: 749px){
+        .button-cont-{{block.id}}{
+        /* display: flex; */
+        margin: 0;
+        /* flex-direction: row; */
+        justify-content: {{block.settings.buttonalign_mob}};
+        
+    }
+    .btn-style{
+       
+        /* display: {{block.settings.button_width}}; */
+        display: block;
+        width: 153px;
+        
+    }
+    .btn-style:active{
+        background-color: hsl(0, 0%, 30%);
+    }
+    }
+</style>
+
+<div class="button-cont-{{block.id}}">
+    <a href="{{block.settings.buttonurl}}" class="">
+        <button class="btn-style">{{block.settings.buttontxt}}</button>
+    </a>
+</div>
+
+{% schema %}
+{
+    "name": "Buttons",
+    "settings": [
+         {
+            "type": "text",
+            "id": "buttontxt",
+            "label": "Button Text"
+         },
+         {
+            "type": "url",
+            "id": "buttonurl",
+            "label": "Button Url"
+         },
+         {
+                "type": "select",
+                "id": "buttonalign",
+                "label": "Button Aligment",
+                "default": "center",
+                "options": [
+                    {
+                        "label": "Left",
+                        "value": "left"
+                    },
+                    {
+                        "label": "Center",
+                        "value": "center"
+                    },
+                    {
+                        "label": "Right",
+                        "value": "right"
+                    }
+                ]
+            },
+            {
+                "type": "select",
+                "id": "buttonalign_mob",
+                "label": "Mobile Button Aligment",
+                "default": "center",
+                "options": [
+                    {
+                        "label": "Left",
+                        "value": "left"
+                    },
+                    {
+                        "label": "Center",
+                        "value": "center"
+                    },
+                    {
+                        "label": "Right",
+                        "value": "right"
+                    }
+                ]
+            },
+            {
+                "type": "select",
+                "id": "button_width",
+                "label": "Button Width",
+                "options": [
+                    {
+                        "value": "block",
+                        "label": "Full Width"
+                    },
+                    {
+                        "value": "inline-block",
+                        "label": "Default"
+                    }
+                ],
+                "default":"inline-block"
+            }
+         
+        ],
+        "presets": [
+            {
+                "name": "Buttons1"
+            }
+        ]
+}
+{% endschema %}

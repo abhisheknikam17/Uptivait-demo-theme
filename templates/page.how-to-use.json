@@ -1,0 +1,279 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero_section_KKPMAb": {
+      "type": "Hero-section",
+      "blocks": {
+        "customheading_qreWck": {
+          "type": "_customheading",
+          "name": "Up-Heading",
+          "settings": {
+            "text": "How to Use",
+            "textsize": 48,
+            "textsize_mobile": 40,
+            "left_rightpadding": false,
+            "headingalign": "center",
+            "headingalign_mob": "center",
+            "headingcolor": "#ffffff",
+            "headingopacity": 1,
+            "bottomgap": 10
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "customheading_qreWck"
+      ],
+      "name": "Up Banner",
+      "settings": {
+        "image": "shopify://shop_images/product_picture_4.jpg",
+        "brightness_img": 0.6,
+        "padding_top": 1,
+        "margin_top": 15,
+        "margin_bottom": 15,
+        "mobilebannerheight": 90,
+        "desktopbannerheight": 30,
+        "enable_mobile_img": "no",
+        "videourl": "",
+        "content_direction_column": "Column_Center",
+        "content_direction_row": "Row_Left",
+        "content_gap": "small",
+        "opacity": "on"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "blocks": {
+        "heading": {
+          "type": "text",
+          "name": "Title",
+          "settings": {
+            "text": "<h1>{{ closest.page.title }}</h1>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "h1",
+            "font": "var(--font-primary--family)",
+            "font_size": "",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "page-content": {
+          "type": "page-content",
+          "settings": {},
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading",
+        "page-content"
+      ],
+      "disabled": true,
+      "settings": {
+        "content_direction": "column",
+        "gap": 32,
+        "color_scheme": "",
+        "padding-block-start": 40,
+        "padding-block-end": 80
+      }
+    },
+    "zig_zagsection_TFQJhi": {
+      "type": "zig-zagsection",
+      "blocks": {
+        "customheading_4j9mbk": {
+          "type": "_customheading",
+          "name": "Up-Heading",
+          "settings": {
+            "text": "Where Wellness Meets Style",
+            "textsize": 40,
+            "textsize_mobile": 40,
+            "left_rightpadding": false,
+            "headingalign": "left",
+            "headingalign_mob": "center",
+            "headingcolor": "#1a1a1a",
+            "headingopacity": 1,
+            "bottomgap": 10
+          },
+          "blocks": {}
+        },
+        "herotext_QtY3E3": {
+          "type": "_herotext",
+          "name": "Subtext",
+          "settings": {
+            "hero_text": "At Uptavit, we believe taking care of your health should be as natural as putting on your favorite piece of jewelry. That’s why we created the Uptavit Ring Chain — a simple, wearable way to support your body with essential vitamins, while looking effortlessly stylish.",
+            "text_size": 16,
+            "mobile_size": 14,
+            "subtextcolor": "#1a1a1a",
+            "subtextalign": "left",
+            "subtextalign_mob": "center"
+          },
+          "blocks": {}
+        },
+        "buttons_kcmnJB": {
+          "type": "_buttons",
+          "name": "Buttons1",
+          "settings": {
+            "buttontxt": "Discover",
+            "buttonurl": "",
+            "buttonalign": "left",
+            "buttonalign_mob": "center",
+            "button_width": "inline-block"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "customheading_4j9mbk",
+        "herotext_QtY3E3",
+        "buttons_kcmnJB"
+      ],
+      "name": "Zig-zag Section",
+      "settings": {
+        "zig_img": "shopify://shop_images/Product_picture_1_407c27a0-e34f-41f8-9332-5a79b122e469.png",
+        "bgcolor": "",
+        "bgcolordesktop": "",
+        "flex_direction": "row",
+        "width": "80"
+      }
+    },
+    "brand_quote_TAQitj": {
+      "type": "Brand-quote",
+      "name": "Brand Quote",
+      "settings": {
+        "quote": "\"We design products that don’t just work — they blend into your life seamlessly, helping you feel confident, healthy, and in control.",
+        "textsize": 40
+      }
+    },
+    "zig_zagsection_KEi4h9": {
+      "type": "zig-zagsection",
+      "blocks": {
+        "customheading_f6z9BE": {
+          "type": "_customheading",
+          "name": "Up-Heading",
+          "settings": {
+            "text": "Why We Exist",
+            "textsize": 40,
+            "textsize_mobile": 40,
+            "left_rightpadding": false,
+            "headingalign": "left",
+            "headingalign_mob": "left",
+            "headingcolor": "#1a1a1a",
+            "headingopacity": 1,
+            "bottomgap": 10
+          },
+          "blocks": {}
+        },
+        "herotext_W9CmFd": {
+          "type": "_herotext",
+          "name": "Subtext",
+          "settings": {
+            "hero_text": "Traditional supplements can be bulky, easy to forget, or feel clinical. We wanted to change that. The Uptavit Ring Chain transforms wellness into something you can wear proudly — a symbol of health and style in one.",
+            "text_size": 16,
+            "mobile_size": 14,
+            "subtextcolor": "#1a1a1a",
+            "subtextalign": "left",
+            "subtextalign_mob": "center"
+          },
+          "blocks": {}
+        },
+        "buttons_cyrNBt": {
+          "type": "_buttons",
+          "name": "Buttons1",
+          "settings": {
+            "buttontxt": "Discover",
+            "buttonurl": "shopify://products/the-uptavit-ring-chain",
+            "buttonalign": "left",
+            "buttonalign_mob": "center",
+            "button_width": "inline-block"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "customheading_f6z9BE",
+        "herotext_W9CmFd",
+        "buttons_cyrNBt"
+      ],
+      "name": "Zig-zag Section",
+      "settings": {
+        "zig_img": "shopify://shop_images/Product_picture_3.png",
+        "bgcolor": "",
+        "bgcolordesktop": "hsla(36, 33%, 88%, 0.42)",
+        "flex_direction": "row-reverse",
+        "width": "80"
+      }
+    },
+    "features_info_jKXBQ9": {
+      "type": "Features-info",
+      "blocks": {
+        "feature_jdFf3F": {
+          "type": "feature",
+          "settings": {
+            "info_image": "shopify://shop_images/boxsvg2.svg",
+            "info_text": "Free Shipping"
+          }
+        },
+        "feature_kmHLmJ": {
+          "type": "feature",
+          "settings": {
+            "info_image": "shopify://shop_images/returns.svg",
+            "info_text": "30-Day Returns"
+          }
+        },
+        "feature_xrpmB4": {
+          "type": "feature",
+          "settings": {
+            "info_image": "shopify://shop_images/securecheckout.svg",
+            "info_text": "Secure Checkout"
+          }
+        },
+        "feature_4M7wCW": {
+          "type": "feature",
+          "settings": {
+            "info_image": "shopify://shop_images/bussvg.svg",
+            "info_text": "Fast Delivery"
+          }
+        }
+      },
+      "block_order": [
+        "feature_jdFf3F",
+        "feature_kmHLmJ",
+        "feature_xrpmB4",
+        "feature_4M7wCW"
+      ],
+      "name": "Features Info",
+      "settings": {
+        "width": 40,
+        "height": 32
+      }
+    }
+  },
+  "order": [
+    "hero_section_KKPMAb",
+    "main",
+    "zig_zagsection_TFQJhi",
+    "brand_quote_TAQitj",
+    "zig_zagsection_KEi4h9",
+    "features_info_jKXBQ9"
+  ]
+}

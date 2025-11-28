@@ -1,0 +1,437 @@
+<style>
+
+    .brand-info-container-{{ section.id }}{
+        display: flex;
+        flex-direction: row;
+        width: 96%;
+        margin: auto;
+        margin-top: 55px;
+        background-color:#EBE3D7;
+        overflow: hidden;
+        border-radius:24px;
+    }
+    .brand-image{
+        width: 50%;
+    }
+    /* .blocks-container{
+        display: flex;
+        width: 100%;
+    } */
+    .info-blocks{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        
+        height: 100%;
+        margin: auto auto auto auto;
+        padding:35px 80px 0px 80px;
+}
+    .info-img-wrapper{
+        margin: 40px 0;
+        display: flex;
+        flex-direction: row;
+        width: 85%;
+        /* justify-content: flex-start; */
+        gap: 50px;
+        flex-grow: 4;
+        /* flex-shrink: 3; */
+        flex-wrap: wrap;
+    }
+    .info-image-text{
+        display: flex;
+        /* flex-shrink: 4; */
+        /* flex-wrap: wrap; */
+        gap: 20px;
+        /* flex: 1 1 0px; */
+        /* width: 0; */
+        justify-content: center;
+        flex-direction: column;
+        /* width: 100%; */
+        align-items: center;
+        text-align: center;
+        /* width: max-content; */
+    }
+    .padding_setting{
+        padding-left: 40px;
+    }
+    .padding_setting2{
+        padding-left: 20px;
+    }
+    .info-image{
+        width: 37px;
+        height: auto;
+    }
+    .heading-info{
+        font-size: {{ section.block.settings.heading_size }}px;
+        color: #1A1A1A;
+        font-weight: 500;
+    }
+    .desktop-img{
+        display: block;
+    }
+    .mobile-img{
+        display: none;
+    }
+
+
+    .btn-style1{
+        display: inline-block;
+      border: none;
+      color: #ffffff;
+      background-color: #1A1A1A;
+      padding: 16px 32px;
+      border-radius: 24px;
+      font-size: 16px;
+      font-weight: 500;
+      margin-top: 18px;
+      margin-right:18px;
+      cursor: pointer;
+     
+    }
+@media screen and (max-width: 1024px) {
+    .info-blocks {
+        padding: 35px 40px;
+        margin: 0;
+        width: 100%;
+        /* padding: 30px 40px; */
+        text-align: center;
+            
+    }
+    .brand-image{
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+    }
+    .brand-image img{
+        min-width: 400px;
+        height: 500px;
+    }
+    .info-img-wrapper {
+        gap: 30px;
+    }
+    .desktop-img{
+        display: none;
+    }
+    .mobile-img{
+        display: block;
+        height: 100%;
+        object-fit: contain;
+}
+    
+        .heading-info{
+            font-size: 32px !important;
+        }
+        .info-img-wrapper{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 25px;
+        }
+        .info-image-text p{
+            /* flex: 1 1 0px; */
+            font-size: 14px;
+            white-space: nowrap;
+        }
+}
+
+
+
+    @media screen and ( max-width: 749px){
+        .brand-info-container-{{ section.id }}{
+            flex-direction: column;
+            width: 90%;
+            /* margin:auto; */
+            align-items: center;
+}
+        .brand-image{
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+        .brand-image img{
+            width: 400px;
+            height: 500px;
+        }
+        .mobile-img{
+        display: block;
+    }
+    .desktop-img{
+        display: none;
+    }
+        .info-blocks{
+            margin: 0;
+            width: 100%;
+            padding: 30px 40px;
+            text-align: center;
+            
+        }
+        .heading-info{
+            font-size: 32px !important;
+        }
+        .info-img-wrapper{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 25px;
+        }
+        .info-image-text p{
+            /* flex: 1 1 0px; */
+            font-size: 14px;
+            white-space: nowrap;
+        }
+        .padding_setting{
+        padding-left: 0;
+    }
+    .padding_setting2{
+        padding-left:0;
+    }
+    .mob_display{
+        display: none;
+    }
+    .btn-style1{
+        margin-bottom: 20px;
+        margin-top: 0;
+        
+    }
+    }
+</style>
+{% comment %} <div class="brand-info-container-{{ section.id }}">
+ 
+    
+        <div class="brand-image">
+            {% for block in section.blocks %}  
+            {% if block.type == 'Brand-Image' %}
+            <img src="{{ block.settings.brand_img|  image_url: width: 550 }}" alt="" height="auto" width="550px">
+            {% endif %}
+            {% endfor %}
+        </div>
+        <div class="info-blocks" >
+            {% for block in section.blocks %}
+            {% if block.type == 'Brand-Info' %}
+            <h1 class="heading-info">{{ block.settings.info_heading }}</h1>
+            <p class="subtext">{{ block.settings.info_textarea }}</p>
+            <div class="info-img-wrapper">
+                {% if block.type == 'Info-Images' %}
+                        <div class="info-image-text">
+                            <img src="{{ section.block.settings.info_image |  image_url: width: 37 }}" alt="" width="37px" height="37px">
+                            <p>{{ section.block.settings.info_text }}</p>
+                        </div>
+                {% endif %}
+            
+            </div>
+        {% if block.type == 'button' %}
+        <a href="{{ section.block.settings.buttonurl }}" class="btn-style">{{ section.block.settings.buttonurl }}</a>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+    </div>
+ </div>
+   
+</div> {% endcomment %}
+  {% comment %} new Code  {% endcomment %}
+   <div class="brand-info-container-{{ section.id }}">
+  <div class="brand-image">
+    {% for block in section.blocks %}
+      {% if block.type == 'Brand-Image' %}
+        <img src="{{ block.settings.brand_img | image_url: width: 550 }}" alt="" width="550" height="auto" class="desktop-img">
+        <img src="{{ block.settings.mobilebrand_img | image_url: width:400 }}" alt="" width="400" height="500" class="mobile-img">
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="info-blocks">
+    {% for block in section.blocks %}
+      {% if block.type == 'Brand-Info' %}
+        <h1 class="heading-info" style="font-size:{{ block.settings.heading_size }}px;">
+          {{ block.settings.info_heading }}
+        </h1>
+        <p class="subtext">{{ block.settings.info_textarea }}</p>
+      {% comment %} {% endif %} {% endcomment %}
+
+      {% comment %} {% if block.type == 'Info-Images' %} {% endcomment %}
+         <div class="info-img-wrapper"> 
+           
+          <div class="info-image-text">
+                <img src="{{ block.settings.info_image1 | image_url: width: 37 }}" alt="" width="37px" height="37px" class="info-image">
+                <p>{{ block.settings.info_text1 }}</p> 
+          </div>
+          <div class="info-image-text padding_setting" >
+                <img src="{{ block.settings.info_image2 | image_url: width: 37 }}" alt="" width="37" height="37" class="info-image">
+                <p>{{ block.settings.info_text2 }}</p>
+           </div>
+         <div class="info-image-text padding_setting2" >
+                <img src="{{ block.settings.info_image3 | image_url: width: 37 }}" alt="" width="37" height="37" class="info-image">
+                <p>{{ block.settings.info_text3 }}</p>
+           </div>
+          <div class="info-image-text"> 
+                <img src="{{ block.settings.info_image4 | image_url: width: 37 }}" alt="" width="37" height="37" class="info-image">
+                <p>{{ block.settings.info_text4 }}</p> 
+           </div>
+          <div class="info-image-text mob_display">
+                <img src="{{ block.settings.info_image5 | image_url: width: 37 }}" alt="" width="37" height="37" class="info-image">
+                <p>{{ block.settings.info_text5 }}</p> 
+         </div>
+         </div> 
+      {% endif %}
+
+      {% if block.type == 'button' %}
+        <div class="btn-cont">
+        <button class="btn-style1">
+        <a href="{{ block.settings.buttonurl }}" class="btnstyle1" style="color: #ffffff">{{ block.settings.button_text }}</a>
+        </button>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "Brand Info-section",
+    "blocks": [
+        {
+            "type": "Brand-Image",
+            "name": "Brand Image",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "brand_img",
+                    "label": "Insert Image Here"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "mobilebrand_img",
+                    "label": "Insert Image Here(Mobile)"
+                }
+            ]
+        },
+        {
+            "type": "Brand-Info",
+            "name": "Brand Info",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "info_heading",
+                    "label": "Heading"
+                },
+                {
+                    "type": "range",
+                    "label": "Font Size Heading",
+                    "id": "heading_size",
+                    "min": 0,
+                    "max": 50,
+                    "step": 1,
+                    "unit" :"px",
+                    "default": 24
+                },
+                {
+                    "type": "range",
+                    "label": "Font Size Heading (Mobile)",
+                    "id": "mobheading_size",
+                    "min": 0,
+                    "max": 50,
+                    "step": 1,
+                    "unit" :"px",
+                    "default": 24
+                },
+                {
+                    "type": "textarea",
+                    "id": "info_textarea",
+                    "label": "Write Here"
+                },
+                {
+                    "type": "range",
+                    "label": "Font Size Subtext",
+                    "id": "infosubtext",
+                    "min": 0,
+                    "max": 50,
+                    "step": 1,
+                    "unit" :"px",
+                    "default": 24
+                },
+                {
+                    "type": "range",
+                    "label": "Font Size Subtext (Mobile)",
+                    "id": "mobsubtext",
+                    "min": 0,
+                    "max": 50,
+                    "step": 1,
+                    "unit" :"px",
+                    "default": 24
+                },
+                {
+                    "type": "image_picker",
+                    "id": "info_image1",
+                    "label": "Insert Image 1 here"
+                },
+                {
+                    "type": "text",
+                    "id": "info_text1",
+                    "label": "Write Here"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "info_image2",
+                    "label": "Insert Image 2 here"
+                },
+                {
+                    "type": "text",
+                    "id": "info_text2",
+                    "label": "Write Here"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "info_image3",
+                    "label": "Insert Image 3 here"
+                },
+                {
+                    "type": "text",
+                    "id": "info_text3",
+                    "label": "Write Here"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "info_image4",
+                    "label": "Insert Image 4 here"
+                },
+                {
+                    "type": "text",
+                    "id": "info_text4",
+                    "label": "Write Here"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "info_image5",
+                    "label": "Insert Image 5 here"
+                },
+                {
+                    "type": "text",
+                    "id": "info_text5",
+                    "label": "Write Here"
+                }
+            ]
+        },
+        
+        {
+            "type": "button",
+            "name":"button",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "button_text",
+                    "label": "Button Text"
+                },
+                 {
+                    "type": "url",
+                    "id": "buttonurl",
+                    "label": "Button Url"
+                }
+]
+        }
+        ],
+        "presets": [
+            {
+                "name": "Brand Info Section"
+            }
+        ]
+}
+{% endschema %}

@@ -1,0 +1,44 @@
+<style>
+    @media screen and (max-width: 749px){
+        .brand-quote__container{
+            width: 85%;
+            
+        }
+        .quote{
+            font-size: 28px !important;
+        }
+    }
+</style>
+
+<div class="brand-quote__container" style="margin: 70px auto; max-width: 1100px;">
+    {% comment %} {% content_for 'blocks' %} {% endcomment %}
+     <h1 class="quote" style="font-weight: 300; text-align: left; font-size: {{ section.settings.textsize }}px;">{{ section.settings.quote |  strip_html }}</h1>
+</div>
+
+{% schema %}
+{
+    "name": "Brand Quote",
+    "settings": [
+        {
+            "type": "text",
+            "id": "quote",
+            "label": "Write Here"
+        },
+        {
+                "type": "range",
+                "id": "textsize",
+                "label": "Text size",
+                "min": 0,
+                "max": 100,
+                "step": 1,
+                "unit": "px",
+                "default": 40
+            }
+    ],
+    "presets": [
+        {
+            "name": "Brand Quote"
+        }
+    ]
+}
+{% endschema %}

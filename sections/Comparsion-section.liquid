@@ -1,0 +1,331 @@
+{% style %}
+    .comparison-section-container-{{ section.id }}{
+        width: 85%;
+        margin: 95px auto;
+        background-color: {{ section.settings.background_color }};
+        /* opacity: 42%; */
+        border-radius: 24px;
+        text-align: center;
+        
+        
+    }
+    .sec_heading{
+        font-size: 40px;
+        text-align: center;
+        margin-block-start: none;
+        padding-top: 62px;
+        padding-bottom: 45px;
+        }
+{% endstyle %}
+<style>
+.block-wrapper{
+    display: flex;
+    justify-content: center;
+    gap: 65px;
+}
+.price-and-info{
+    background-color: #ECE3D3;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 54px;
+    margin-bottom: 25px;
+}
+.price-and-info p {
+    border-bottom: none !important;
+    padding-left: 22px;
+    padding-right: 22px;
+}
+.price-and-info h3{
+    font-size: 32px;
+    padding-top: 23px;
+}
+.second-price-info{
+    color: rgba(26, 26, 26, 0.6);
+     margin-top: 54px;
+     margin-bottom: 25px;
+}
+.second-price-info p{
+    border-bottom: none !important;
+}
+.second-price-info h3{
+    font-size: 32px;
+    padding-top: 23px;
+}
+.block1 p{
+    font-size: 16px;
+    padding-bottom: 19px;
+    padding-top: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+}
+.block1 h3{
+    font-size: 22px;
+}
+.block3 h3{
+    font-size: 22px;
+}
+.heading, .heading2 {
+    padding-bottom: 23px;
+    font-size: 22px;
+    font-weight: 400 !important;
+}
+
+.block3 p{
+    font-size: 16px;
+    padding-bottom: 19px;
+    padding-top: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+}
+/* .price{
+    border-bottom: none !important;
+    padding-left: 22px;
+    padding-right: 22px;
+
+} */
+ .padding-none{
+    border-bottom: none !important;
+    padding-bottom: 0px !important;
+ }
+
+ @media screen and ( max-width: 750px){
+    .block2{
+        display: none;
+    }
+    .comparison-section-container-{{ section.id }}{
+        width: 95%;
+    }
+    .block-wrapper{
+        width: 100%;
+         margin: auto;
+    display: flex;
+    justify-content: center;
+    gap: 0px;
+}
+.block1-inner{
+    border-right: 2px solid hsla(0, 0%, 0%, 0.1);
+}
+.block3{
+    max-width: 100%;
+}
+
+.block-wrapper p{
+    font-size: 14px;
+    /* overflow-wrap: break-word; */
+    /* word-wrap: break-word; */
+}
+.heading2{
+    padding-bottom: 3px;
+}
+.block-wrapper h3{
+    font-size: 20px;
+}
+
+.sec_heading{
+    font-size: 32px;
+}
+    .second-price-info h3{
+    font-size: 24px;
+    /* padding-top: 23px; */
+
+    }
+    .price-and-info h3{
+    font-size: 24px;
+    /* padding-top: 23px; */
+}
+.price-and-info{
+    width: 90%;
+    margin: 26px auto;
+    /* word-wrap: break-word !important; */
+}
+.second-price-info{
+    width: 100%;
+     margin:26px auto;
+     /* word-wrap: break-word !important; */
+     /* overflow-wrap: break-word; */
+}
+.padding-none{
+    padding-bottom: 6px !important;
+}
+.block-wrapper p,
+.heading,
+.heading2,
+.price {
+    font-size: 14px;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+    text-wrap: wrap;
+}
+ }
+    
+</style>
+
+<div class="comparison-section-container-{{ section.id }}">
+    <h2 class="sec_heading">{{ section.settings.section_heading }}</h2>
+    
+    <div class="block-wrapper">
+        {% for block in section.blocks %}
+        {% if block.type == 'Uptavit_block' %}
+           <div class="block1">
+            <div class="block1-inner">
+                <h3 class="heading">{{ block.settings.ring_name }}</h3>
+                <p>{{ block.settings.benefit_1 }}</p>
+                <p>{{ block.settings.benefit_2 }}</p>
+                <p>{{ block.settings.benefit_3 }}</p>
+                <p>{{ block.settings.benefit_4 }}</p>
+                <p class="padding-none">{{ block.settings.benefit_5 }}</p>
+            </div>
+            <div class="price-and-info">
+                <h3>{{ block.settings.uptavit_price }}</h3>
+                <p class="price">{{ block.settings.merit }}</p>
+            </div>
+           </div>
+           {% elsif block.type == 'product_photo' %}
+            <div class="block2">
+                <img src="{{ block.settings.product_pic |  image_url: width: 400 }}" alt="Uptavit Product photo" width="auto" height="auto">
+            </div>
+        {% elsif block.type == 'other_brands_block' %}
+           <div class="block3">
+            <h3 class="heading2">{{ block.settings.other_name }}</h3>
+            <p>{{ block.settings.point_1 }}</p>
+            <p>{{ block.settings.point_2 }}</p>
+            <p>{{ block.settings.point_3 }}</p>
+            <p>{{ block.settings.point_4 }}</p>
+            <p class="padding-none">{{ block.settings.point_5 }}</p>
+            <div class="second-price-info">
+                <h3>{{ block.settings.other_price }}</h3>
+                <p class="price">{{ block.settings.demerit }}</p>
+            </div>
+           </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    
+</div>
+
+{% schema %}
+{
+    "name": "Brand Comparison Section",
+    "settings": [
+            {
+                "type": "color_background",
+                "id": "background_color",
+                "label": "Background Color"
+            },
+            {
+                "type": "text",
+                "id": "section_heading",
+                "label": "Section Heading"
+            }
+        ],
+        "blocks": [
+            {
+                "type": "Uptavit_block",
+                "name": "Uptavit Section",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "ring_name",
+                        "label": "Brand Name"
+                    },
+                    {
+                        "type": "text",
+                        "id": "benefit_1",
+                        "label": "Benefit 1"
+                    },
+                    {
+                        "type": "text",
+                        "id": "benefit_2",
+                        "label": "Benefit 2"
+                    },
+                    {
+                        "type": "text",
+                        "id": "benefit_3",
+                        "label": "Benefit 3"
+                    },
+                    {
+                        "type": "text",
+                        "id": "benefit_4",
+                        "label": "Benefit 4"
+                    },
+                    {
+                        "type": "text",
+                        "id": "benefit_5",
+                        "label": "Benefit 5"
+                    },
+                    {
+                        "type": "textarea",
+                        "id": "uptavit_price",
+                        "label": "Product Price"
+                    },
+                    {
+                        "type": "text",
+                        "id": "merit",
+                        "label": "Text"
+                    }
+                ]
+            },
+            {
+                "type": "product_photo",
+                "name": "Product Photo",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "product_pic",
+                        "label": "Product photo"
+                    }
+                ]
+            },
+            {
+                "type": "other_brands_block",
+                "name": "Other Brands Block",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "other_name",
+                        "label": "Name"
+                    },
+                    {
+                        "type": "text",
+                        "id": "point_1",
+                        "label": "Point 1"
+                    },
+                    {
+                        "type": "text",
+                        "id": "point_2",
+                        "label": "Point 2"
+                    },
+                    {
+                        "type": "text",
+                        "id": "point_3",
+                        "label": "Point 3"
+                    },
+                    {
+                        "type": "text",
+                        "id": "point_4",
+                        "label": "Point 4"
+                    },
+                    {
+                        "type": "text",
+                        "id": "point_5",
+                        "label": "Point 5"
+                    },
+                    {
+                        "type": "text",
+                        "id": "other_price",
+                        "label": "Product Price"
+                    },
+                    {
+                        "type": "text",
+                        "id": "demerit",
+                        "label": " Demerit Text"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Brand Comparison Section"
+            }
+        ]
+}
+{% endschema %}

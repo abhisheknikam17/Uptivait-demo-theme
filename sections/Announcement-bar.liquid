@@ -1,0 +1,163 @@
+<style>
+    .splide{
+        width: 100%;
+    }
+    .announcement-bar-section{
+        /* padding-left: 140px; */
+        width: 100%;
+         
+        /* min-width: 1907px; */
+    }
+    .announcement_color{
+        
+       background-image: linear-gradient( to right, #BD9162, #67353C );
+    }
+    /* .splide__slide{
+        display: inline-block;
+        /*  */
+        
+  
+    .bar-text{
+        padding: 13px 0;
+        color: #ffffff;
+    }
+    .announcement-li{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        /* margin-left: 120px; */
+        gap: 10px;
+    }
+    .announcement-flex{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        text-align: center;
+    }
+    .icon_png{
+        width: {{ section.settings.icon_width }}px;
+        height: {{ section.settings.icon_height }}px;
+        object-fit: contain;
+        /* background-color: aquamarine; */
+    }
+</style>
+<div class="announcement-bar-section">
+<section class="splide announcement_color" id="splide-announcement-{{ section.id }}" aria-label="Splide Basic HTML Example">
+  <div class="splide__track ">
+    <ul class="splide__list announcement-flex">
+        {% for block in section.blocks %}
+            <li class="splide__slide announcement-li">
+                    <img src="{{ block.settings.icon | image_url: width: 22 }}" alt="" width="22px" height="22px" class="icon_png" loading="eager">
+                
+                 <p class="bar-text">{{ block.settings.announcement_text }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+  </div>
+</section>
+</div>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function () {
+    const isMobile = window.innerWidth <= 768;
+    new Splide('#splide-announcement-{{ section.id }}', {
+        type: 'loop',
+        perPage: {{ section.settings.slide_desktop | default: 3}},
+        gap: '30px',
+        autoplay: false,
+         easing: 'ease',
+         focus: 0,
+         pagination:false,
+         arrows: false,
+        // autoScroll: {
+        //     speed: 1
+        // },
+        breakpoints: {
+            1024: {
+                perPage: 1,
+                autoplay: true,
+                autoPlaySpeed: 1000
+            },
+            768: {
+                perPage: 1,
+               autoplay: true,
+               autoPlaySpeed: 1000,
+            }
+        }
+    }).mount();
+});
+</script>
+
+{% schema %}
+{
+    "name": " Up Announcement Bar",
+    "settings": [
+            {
+                "type": "range",
+                "id": "slide_desktop",
+                "label": "Number of Slides (Desktop)",
+                "step": 1,
+                "min": 1,
+                "max": 6,
+                "default": 3
+            },
+            {
+                "type": "range",
+                "id": "slide_mobile",
+                "label": "Number of Slides (Mobile)",
+                "step": 1,
+                "min": 1,
+                "max": 6,
+                "default": 1
+            },
+            {
+                        "type": "range",
+                        "id": "icon_width",
+                        "min": 10,
+                        "max": 50,
+                        "unit": "px",
+                        "step": 1,
+                        "label": "icon width",
+                        "default": 22
+                        
+                    },
+                    {
+                        "type": "range",
+                        "id": "icon_height",
+                        "min": 10,
+                        "max": 50,
+                        "unit": "px",
+                        "step": 1,
+                        "label": "icon height",
+                        "default": 22
+                        
+                    }
+        ],
+        "blocks": [
+            {
+                "type": "announcemnt",
+                "name":"announcement",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "icon",
+                        "label": "icon"
+                    },
+                    
+                    {
+                        "type": "text",
+                        "id": "announcement_text",
+                        "label": "Write here"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": " Up Announcement Bar"
+            }
+        ]
+}
+{% endschema %}

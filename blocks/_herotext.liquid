@@ -1,0 +1,122 @@
+{% style %}
+.hero-subtext-{{ section.id }}-{{block.id}}{
+    width: 100%;
+    /* width:55%; */
+    position: relative;
+    text-align: {{block.settings.subtextalign}};
+    
+}
+  .hero-subtext-{{ section.id }}-{{block.id}} .sub-text{
+        color: {{ block.settings.subtextcolor }};
+         font-size: {{block.settings.text_size}}px;
+        /* text-align:{{block.settings.subtextalign}}; */
+        margin-bottom:{{block.settings.subextgap}}px;
+        color: {{block.settings.subtextcolor}};
+        /* width:55%; */
+        
+        text-wrap: wrap;
+        margin:auto
+    }
+
+    @media screen and (max-width: 749px ){
+       .hero-subtext-{{ section.id }}-{{block.id}} .sub-text{
+            /* font-size: 16px; */
+            width: 90%;
+            margin: auto;
+            letter-spacing: 0%;
+            text-align: {{ block.settings.subtextalign_mob }};
+            font-size: {{ block.settings.mobile_size }}px;
+            
+        }
+    }
+{% endstyle %}
+<div class="hero-subtext-{{ section.id }}-{{block.id}}">
+    <p class="sub-text" style="">
+        {{block.settings.hero_text}}
+    </p>
+</div>
+
+{%  schema  %} 
+{
+   "name":" Subtext",
+   "settings": [
+    {
+        "type": "textarea",
+        "id": "hero_text",
+        "label": "hero subtext"
+    },
+    {
+        "type": "range",
+        "label": "Font Size",
+        "id": "text_size",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "unit" :"px",
+        "default": 18
+    },
+    {
+        "type": "range",
+        "label": "Mobile Font Size",
+        "id": "mobile_size",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "unit" :"px",
+        "default": 14
+    },
+    {
+                "type": "color",
+                "id": "subtextcolor",
+                "label": "Subtext color",
+                "default": "#1A1A1A"
+    },
+    {
+        "type":"select",
+        "id": "subtextalign",
+        "label":"Subtext Align",
+        "default": "center",
+        "options": [
+            {
+                "value": "left",
+                "label":"Left"
+            },
+            {
+                "value": "center",
+                "label":"Center"
+            },
+            {
+                "value": "right",
+                "label":"Right"
+            }
+        ] 
+    },
+    {
+        "type":"select",
+        "id": "subtextalign_mob",
+        "label":"Subtext Align(Mobile)",
+        "default": "center",
+        "options": [
+            {
+                "value": "left",
+                "label":"Left"
+            },
+            {
+                "value": "center",
+                "label":"Center"
+            },
+            {
+                "value": "right",
+                "label":"Right"
+            }
+        ] 
+    }
+    
+   ],
+   "presets": [
+    {
+        "name": "Subtext"
+    }
+   ]
+}   
+{% endschema %}

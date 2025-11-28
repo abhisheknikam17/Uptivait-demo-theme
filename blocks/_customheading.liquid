@@ -1,0 +1,149 @@
+<style>
+    .heading-main-{{ section.id }}-{{ block.id }}{
+        width: 100%;
+        height:auto;
+        position: relative;
+        margin:0;
+        text-align: {{ block.settings.headingalign }};
+    }
+    /* h1{
+        margin-block-end: {{block.settings.bottomgap}}px !important;
+    } */
+.heading-main-{{ section.id }}-{{ block.id }} .heading-txt{
+    {% if block.settings.left_rightpadding == true %}
+    padding: 0 20px;
+    {% endif %}
+    /* margin: 0; */
+    font-size: {{ block.settings.textsize }}px;
+    width: 100%;
+    
+    
+    opacity:{{block.settings.headingopacity}};
+    /* margin-bottom:{{block.settings.bottomgap}}px; */
+    line-height:100%;
+    font-weight: 400;
+
+}
+@media screen and (max-width: 750px) {
+    .heading-main-{{ section.id }}-{{ block.id }} .heading-txt{
+        font-size: {{ block.settings.textsize_mobile }}px;
+        text-align: {{ block.settings.headingalign_mob }};
+        padding: 0 20px;
+    }
+}
+</style>
+
+<div class="heading-main-{{ section.id }}-{{ block.id }}" {{ block.shopify_attributes }}>
+    <h1 class="heading-txt" style="color:{{ block.settings.headingcolor }};  margin-bottom: {{ block.settings.bottomgap }}px;  ">{{block.settings.text}}</h1>
+</div>
+
+{% schema %}
+{
+    "name": " Heading",
+    "tag": null,
+    "settings": [
+            {
+                "type": "text",
+                "id": "text",
+                "label": "Text"
+            },
+            {
+                "type": "range",
+                "id": "textsize",
+                "label": "Text size",
+                "min": 0,
+                "max": 100,
+                "step": 1,
+                "unit": "px",
+                "default": 40
+            },
+            {
+                "type": "range",
+                "id": "textsize_mobile",
+                "label": "Text size (Mobile)",
+                "min": 0,
+                "max": 100,
+                "step": 1,
+                "unit": "px",
+                "default": 40
+            },
+            {
+                "type": "checkbox",
+                "id": "left_rightpadding",
+                "label": "Padding(Left-right)",
+                "default": false
+            },
+            {
+                "type": "select",
+                "id": "headingalign",
+                "label": "Heading Aligment",
+                "default": "center",
+                "options": [
+                    {
+                        "label": "Left",
+                        "value": "left"
+                    },
+                    {
+                        "label": "Center",
+                        "value": "center"
+                    },
+                    {
+                        "label": "Right",
+                        "value": "right"
+                    }
+                ]
+            },
+            {
+                "type": "select",
+                "id": "headingalign_mob",
+                "label": "Heading Aligment Mobile",
+                "default": "center",
+                "options": [
+                    {
+                        "label": "Left",
+                        "value": "left"
+                    },
+                    {
+                        "label": "Center",
+                        "value": "center"
+                    },
+                    {
+                        "label": "Right",
+                        "value": "right"
+                    }
+                ]
+            },
+            {
+                "type": "color",
+                "id": "headingcolor",
+                "label": "Heading text color",
+                "default": "#1A1A1A"
+            },
+            {
+                "type": "range",
+                "id": "headingopacity",
+                "label": "Heading opacity",
+                "min": 0.0,
+                "max": 1.0,
+                "step": 0.1,
+                "default": 1.0
+            },
+            {
+                "type": "range",
+                "id": "bottomgap",
+                "label": "Add bottom gap",
+                "min": 0,
+                "max": 100,
+                "step": 1,
+                "unit": "px",
+                "default": 10
+            }
+
+        ],
+    "presets": [
+        {
+            "name": "Up-Heading"
+        }
+    ]
+}
+{% endschema %}

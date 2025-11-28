@@ -1,0 +1,190 @@
+{% comment %}
+    Brand-slider.liquid
+    Brand logo slider using blocks for images.
+    Uses Splide.js for carousel effect.
+{% endcomment %}
+
+<div class="brand-slider brand-slider-{{ section.id }}">
+    <div class="splide brand-slider__wrapper" style="background-color: {{ section.settings.background_color }};">
+        
+        <div class="brand-slider__header-row">
+            <p class="brand-slider__trusted">Trusted by:</p>
+            <div class="splide__track">
+                <ul class="splide__list width-ul">
+                    {% for block in section.blocks %}
+                        <li class="splide__slide brand-slider__item">
+                            {% if block.settings.brand_image != blank %}
+                                <!-- Changed: Improved image clarity by using higher width and srcset -->
+                                <img 
+                                    src="{{ block.settings.brand_image | image_url: width: 240 }}"
+                                    srcset="{{ block.settings.brand_image | image_url: width: 240 }} 1x, {{ block.settings.brand_image | image_url: width: 480 }} 2x"
+                                    alt="Brand logo"
+                                    class="brand-slider__image"
+                                    height="auto"
+                                    width="120"
+                                />
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.brand-slider {
+    width: 100%;
+    max-width: 1500px;
+    /* margin-top: 55px; */
+    margin: auto;
+    padding: 35px 0;
+    background: #fff;
+}
+.splide__arrows{display: none;}
+
+.brand-slider__wrapper {
+    width: 100%;
+    padding: 43px 121px;
+    /* background-color: hsla(0, 0%, 95%, 1); */
+    border-radius: 24px;
+    margin: auto;
+    display: flex;
+    /* margin-top: 55px; */
+}
+/* Changed: Flex row for header and slider */
+.brand-slider__header-row {
+    max-width: 1300px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    
+}
+.brand-slider__trusted {
+    font-weight: 300;
+    color: #1a1a1a;
+    font-size: 18px;
+    margin-bottom: 0;
+    white-space: nowrap;
+}
+.width-ul{
+    width: auto;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+.brand-slider__item-{{ block.id }} {
+    width: 120px;
+    height: 70px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+.brand-slider__image {
+    width: 120px;
+    height: 60px;
+    max-width: 100%;
+    max-height: 60px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    image-rendering: -webkit-optimize-contrast;
+    transform: translateZ(0);
+}
+
+@media screen and (max-width: 749px){
+    .brand-slider__header-row{
+        width: 100%;
+    }
+    .brand-slider__trusted{
+        font-weight: 300;
+        font-size: 16px;
+    }
+    .brand-slider__wrapper{
+        width: 93%;
+        padding: 23px 15px;
+        border: 1px solid #EBE3D7;
+        border-radius: 24px;
+    }
+}
+
+
+</style>
+
+ <script>
+// document.addEventListener( 'DOMContentLoaded', function () {
+//     new Splide( '.brand-slider__wrapper', {
+//         type   : 'loop',
+//         perPage: 4,
+//         gap    : '30px',
+//         autoplay: true,
+//         breakpoints: {
+//             1024: { perPage: 4 },
+//             640: { perPage: 2 }
+//         }
+//     } ).mount();
+// } );
+
+document.addEventListener('DOMContentLoaded', function () {
+    const isMobile = window.innerWidth <= 768;
+    new Splide('.brand-slider__wrapper', {
+        type: 'loop',
+        perPage: 5,
+        gap: '30px',
+        autoplay: isMobile,
+        autoPlaySpeed: 1000,
+        pauseOnHover: true,
+         easing: 'ease',
+         pagination: false,
+         arrows: false,
+        autoScroll: {
+            speed: 1
+        },
+        breakpoints: {
+            1024: {
+                perPage: 3
+            },
+            768: {
+                perPage: 2,
+                gap: '18px'
+            }
+        }
+    }).mount();
+});
+</script> 
+
+{% schema %}
+{
+  "name": "Brand Slider",
+  "settings": [
+    {
+        "type": "color_background",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#fff"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "brand_logo",
+      "name": "Brand Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "brand_image",
+          "label": "Brand Logo Image"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 20,
+  "presets": [
+    {
+      "name": "Brand Slider"
+    }
+  ]
+}
+{% endschema %}

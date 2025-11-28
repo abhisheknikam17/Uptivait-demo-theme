@@ -1,0 +1,114 @@
+{% comment %} .feature_container-{{ section.id }}{
+        width: 80%;
+        margin: auto;
+        margin-top: 47px;
+        margin-bottom: 47px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+    }
+    .feature_wrapper{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .feature_image{
+        width: 45px;
+        height: 50px;
+        object-fit: contain;
+        margin-bottom: 10px;
+    }
+    @media screen and (max-width: 749px) {
+        .feature_container-{{ section.id }}{
+            /* flex-grow: 1; */
+            /* justify-content: space-around; */
+            /* /* margin-top:10px; */
+            margin-bottom: 25px;
+            /* flex-shrink: auto; */
+            flex-wrap: wrap;
+        }
+        /* Change: Set feature_wrapper to 48% width for two columns on mobile */
+        .feature_wrapper {
+            width: 45%;
+            margin-bottom: 20px;
+        }
+    } {% endcomment %}
+
+
+    <style>
+       .image_container-{{ block.id }}{
+        width: auto !important;
+        margin: auto;
+        /* margin-top: 47px;
+        margin-bottom: 47px; */
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+        text-align:center;
+        gap: 20px;
+        /* flex-wrap: wrap; */
+        /* gap: 20px; */
+    }
+    .wrapper_cont{
+        display: flex !important;
+        width: 25%;
+        flex-direction: column !important;
+        align-items: center;
+        text-align: center;
+    }
+    .info_img{
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+        margin-bottom: 10px;
+    }
+    .info_text{
+        font-size: 14px;
+    }
+    </style>
+
+
+
+<div class="image_container-{{ block.id }} {{ block.shopify_attributes }}">
+    {% comment %} {% for block in section.blocks %} {% endcomment %}
+        
+    
+    <div class="wrapper_cont">
+        {% if block.settings.Info_image %}
+            <img src="{{ block.settings.Info_image |  image_url: width: 30 }}" alt="" width="30" height="30" class="info_img">
+            {% endif %}
+            {% if block.settings.Info_text %}
+            <p class="info_txt">{{ block.settings.Info_text }}</p>
+    
+    {% endif %}
+    </div>  
+    {% comment %} {% endfor %} {% endcomment %}
+</div>
+
+{% schema %}
+{
+    "name": "Info Images",
+    
+    "settings": [
+            {
+                "type": "image_picker",
+                "id": "Info_image",
+                "label": "Insert Image here"
+            },
+            {
+                "type": "text",
+                "id": "Info_text",
+                "label": "Write Here"
+            }
+        ],
+        "presets": [
+            {
+                "name": "Info Image"
+            }
+        ]
+}
+{% endschema %}

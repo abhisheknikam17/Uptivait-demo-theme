@@ -1,0 +1,360 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "blocks": {
+        "text_6ChgNT": {
+          "type": "text",
+          "name": "t:names.heading",
+          "settings": {
+            "text": "<h2>What are the benefits of Uptavit Chain?</h2>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "center",
+            "type_preset": "custom",
+            "font": "var(--font-heading--family)",
+            "font_size": "3rem",
+            "line_height": "tight",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground-heading)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "text_6ChgNT"
+      ],
+      "settings": {
+        "content_direction": "column",
+        "gap": 0,
+        "color_scheme": "",
+        "padding-block-start": 50,
+        "padding-block-end": 10
+      }
+    },
+    "zig_zagsection_kjTifB": {
+      "type": "zig-zagsection",
+      "blocks": {
+        "customheading_JkwH9J": {
+          "type": "_customheading",
+          "name": "Up-Heading",
+          "settings": {
+            "text": "Pain relief",
+            "textsize": 40,
+            "textsize_mobile": 32,
+            "left_rightpadding": false,
+            "headingalign": "left",
+            "headingalign_mob": "left",
+            "headingcolor": "#1a1a1a",
+            "headingopacity": 1,
+            "bottomgap": 10
+          },
+          "blocks": {}
+        },
+        "herotext_XRHwVW": {
+          "type": "_herotext",
+          "name": "Subtext",
+          "settings": {
+            "hero_text": "At Uptavit, we believe taking care of your health should be as natural as putting on your favorite piece of jewelry. That’s why we created the Uptavit Ring Chain — a simple, wearable way to support your body with essential vitamins, while looking effortlessly stylish.",
+            "text_size": 16,
+            "mobile_size": 14,
+            "subtextcolor": "#1a1a1a",
+            "subtextalign": "left",
+            "subtextalign_mob": "left"
+          },
+          "blocks": {}
+        },
+        "buttons_fWPHLD": {
+          "type": "_buttons",
+          "name": "Buttons1",
+          "settings": {
+            "buttontxt": "Discover",
+            "buttonurl": "",
+            "buttonalign": "left",
+            "buttonalign_mob": "center",
+            "button_width": "inline-block"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "customheading_JkwH9J",
+        "herotext_XRHwVW",
+        "buttons_fWPHLD"
+      ],
+      "name": "Zig-zag Section",
+      "settings": {
+        "zig_img": "shopify://shop_images/neckpain.jpg",
+        "bgcolor": "",
+        "bgcolordesktop": "",
+        "flex_direction": "row",
+        "width": "80",
+        "image_size": "100%"
+      }
+    },
+    "zig_zagsection_FWpMbx": {
+      "type": "zig-zagsection",
+      "blocks": {
+        "customheading_Qt7zUf": {
+          "type": "_customheading",
+          "name": "Up-Heading",
+          "settings": {
+            "text": "Blood circulation",
+            "textsize": 40,
+            "textsize_mobile": 32,
+            "left_rightpadding": false,
+            "headingalign": "left",
+            "headingalign_mob": "left",
+            "headingcolor": "#1a1a1a",
+            "headingopacity": 1,
+            "bottomgap": 10
+          },
+          "blocks": {}
+        },
+        "herotext_cDJ6ga": {
+          "type": "_herotext",
+          "name": "Subtext",
+          "settings": {
+            "hero_text": "Traditional supplements can be bulky, easy to forget, or feel clinical. We wanted to change that. The Uptavit Ring Chain transforms wellness into something you can wear proudly — a symbol of health and style in one.",
+            "text_size": 16,
+            "mobile_size": 14,
+            "subtextcolor": "#1a1a1a",
+            "subtextalign": "left",
+            "subtextalign_mob": "left"
+          },
+          "blocks": {}
+        },
+        "buttons_P6V3XQ": {
+          "type": "_buttons",
+          "name": "Buttons1",
+          "settings": {
+            "buttontxt": "Discover",
+            "buttonurl": "shopify://products/the-uptavit-ring-chain",
+            "buttonalign": "left",
+            "buttonalign_mob": "center",
+            "button_width": "inline-block"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "customheading_Qt7zUf",
+        "herotext_cDJ6ga",
+        "buttons_P6V3XQ"
+      ],
+      "name": "Zig-zag Section",
+      "settings": {
+        "zig_img": "shopify://shop_images/Product_picture_3_28f7ca08-2b84-4506-8542-1df8a8632e02.png",
+        "bgcolor": "hsla(36, 33%, 88%, 0.42)",
+        "bgcolordesktop": "hsla(36, 33%, 88%, 0.42)",
+        "flex_direction": "row-reverse",
+        "width": "80",
+        "image_size": "40"
+      }
+    },
+    "zig_zagsection_tzMprm": {
+      "type": "zig-zagsection",
+      "blocks": {
+        "customheading_eDMAgy": {
+          "type": "_customheading",
+          "name": "Up-Heading",
+          "settings": {
+            "text": "Vitamins",
+            "textsize": 40,
+            "textsize_mobile": 32,
+            "left_rightpadding": false,
+            "headingalign": "left",
+            "headingalign_mob": "left",
+            "headingcolor": "#1a1a1a",
+            "headingopacity": 1,
+            "bottomgap": 10
+          },
+          "blocks": {}
+        },
+        "herotext_fMiJxM": {
+          "type": "_herotext",
+          "name": "Subtext",
+          "settings": {
+            "hero_text": "At Uptavit, we believe taking care of your health should be as natural as putting on your favorite piece of jewelry. That’s why we created the Uptavit Ring Chain — a simple, wearable way to support your body with essential vitamins, while looking effortlessly stylish.",
+            "text_size": 16,
+            "mobile_size": 14,
+            "subtextcolor": "#1a1a1a",
+            "subtextalign": "left",
+            "subtextalign_mob": "left"
+          },
+          "blocks": {}
+        },
+        "buttons_F3wd9e": {
+          "type": "_buttons",
+          "name": "Buttons1",
+          "settings": {
+            "buttontxt": "Discover",
+            "buttonurl": "shopify://products/the-uptavit-ring-chain",
+            "buttonalign": "left",
+            "buttonalign_mob": "left",
+            "button_width": "inline-block"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "customheading_eDMAgy",
+        "herotext_fMiJxM",
+        "buttons_F3wd9e"
+      ],
+      "name": "Zig-zag Section",
+      "settings": {
+        "zig_img": "shopify://shop_images/vitamins.jpg",
+        "bgcolor": "",
+        "bgcolordesktop": "",
+        "flex_direction": "row",
+        "width": "80",
+        "image_size": "50"
+      }
+    },
+    "zig_zagsection_FdaXJf": {
+      "type": "zig-zagsection",
+      "blocks": {
+        "customheading_NT6Bf4": {
+          "type": "_customheading",
+          "name": "Up-Heading",
+          "settings": {
+            "text": "The Uptavit Ring Chain",
+            "textsize": 40,
+            "textsize_mobile": 32,
+            "left_rightpadding": false,
+            "headingalign": "left",
+            "headingalign_mob": "center",
+            "headingcolor": "#1a1a1a",
+            "headingopacity": 1,
+            "bottomgap": 10
+          },
+          "blocks": {}
+        },
+        "herotext_th6WU4": {
+          "type": "_herotext",
+          "name": "Subtext",
+          "settings": {
+            "hero_text": "<i>Wellness you can wear.</i>",
+            "text_size": 18,
+            "mobile_size": 14,
+            "subtextcolor": "#1a1a1a",
+            "subtextalign": "left",
+            "subtextalign_mob": "center"
+          },
+          "blocks": {}
+        },
+        "herotext_NnQ6JF": {
+          "type": "_herotext",
+          "name": "Subtext",
+          "settings": {
+            "hero_text": "At Uptavit, we believe taking care of your health should be as natural as putting on your favorite piece of jewelry. That’s why we created the Uptavit Ring Chain — a simple, wearable way to support your body with essential vitamins, while looking effortlessly stylish.",
+            "text_size": 16,
+            "mobile_size": 14,
+            "subtextcolor": "#1a1a1a",
+            "subtextalign": "left",
+            "subtextalign_mob": "center"
+          },
+          "blocks": {}
+        },
+        "buttons_EYacmn": {
+          "type": "_buttons",
+          "name": "Buttons1",
+          "settings": {
+            "buttontxt": "Shop Now",
+            "buttonurl": "shopify://products/the-uptavit-ring-chain",
+            "buttonalign": "left",
+            "buttonalign_mob": "center",
+            "button_width": "inline-block"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "customheading_NT6Bf4",
+        "herotext_th6WU4",
+        "herotext_NnQ6JF",
+        "buttons_EYacmn"
+      ],
+      "name": "Zig-zag Section",
+      "settings": {
+        "zig_img": "shopify://shop_images/Product_picture_1_407c27a0-e34f-41f8-9332-5a79b122e469.png",
+        "bgcolor": "hsla(36, 33%, 88%, 0.42)",
+        "bgcolordesktop": "hsla(36, 33%, 88%, 0.42)",
+        "flex_direction": "row",
+        "width": "80",
+        "image_size": "50"
+      }
+    },
+    "features_info_UQMtBw": {
+      "type": "Features-info",
+      "blocks": {
+        "feature_tKWknL": {
+          "type": "feature",
+          "settings": {
+            "info_image": "shopify://shop_images/boxsvg2.svg",
+            "info_text": "Free Shipping"
+          }
+        },
+        "feature_3kNkcg": {
+          "type": "feature",
+          "settings": {
+            "info_image": "shopify://shop_images/returns.svg",
+            "info_text": "30-Day Returns"
+          }
+        },
+        "feature_E83tiE": {
+          "type": "feature",
+          "settings": {
+            "info_image": "shopify://shop_images/securecheckout.svg",
+            "info_text": "Secure Checkout"
+          }
+        },
+        "feature_RF9t7E": {
+          "type": "feature",
+          "settings": {
+            "info_image": "shopify://shop_images/bussvg.svg",
+            "info_text": "Fast Delivery"
+          }
+        }
+      },
+      "block_order": [
+        "feature_tKWknL",
+        "feature_3kNkcg",
+        "feature_E83tiE",
+        "feature_RF9t7E"
+      ],
+      "name": "Features Info",
+      "settings": {
+        "width": 40,
+        "height": 40
+      }
+    }
+  },
+  "order": [
+    "main",
+    "zig_zagsection_kjTifB",
+    "zig_zagsection_FWpMbx",
+    "zig_zagsection_tzMprm",
+    "zig_zagsection_FdaXJf",
+    "features_info_UQMtBw"
+  ]
+}
