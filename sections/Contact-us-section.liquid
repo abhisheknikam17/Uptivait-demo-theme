@@ -1,0 +1,287 @@
+
+
+<style>
+.premium-contact-wrapper {
+  padding: 60px 0;
+  width: 80%;
+  margin: auto;
+}
+
+.premium-contact-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 60px;
+  margin-top: {{ section.settings.margin_top }}px;
+  margin-bottom: {{ section.settings.margin_bottom }}px;
+}
+
+/* LEFT SIDE */
+.contact-left {
+  flex: 1;
+  padding-top: 30px;
+  width: 50%;
+}
+
+.contact-heading {
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #000;
+  margin-bottom: 40px;
+}
+
+.contact-icons {
+  display: flex;
+  /* gap: 60px; */
+}
+
+.contact-icon-item img {
+  width: 40px;
+  height: auto;
+}
+
+.phone{
+    padding-right: 55px;
+    border-right: 1px solid #00000040;
+}
+.email{
+   padding-left: 50px;
+}
+
+.placeholder-icon {
+  width: 40px;
+  height: 40px;
+  background: #ccc;
+  border-radius: 6px;
+}
+
+/* RIGHT CONTACT FORM CARD */
+.contact-form-card {
+    width: 50%;
+  flex: 1.2;
+  background: #FFFFFF;
+  padding: 40px;
+  border-radius: 24px;
+  
+  box-shadow: 0px 4px 16px 0px #0000001a;
+  /* Rectangle 41447 */
+
+
+}
+
+.form-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #1a1a1a;
+}
+
+.premium-contact-form .form-row {
+  margin-bottom: 20px;
+}
+
+.premium-contact-form input,
+.premium-contact-form textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid #dcdcdc;
+  border-radius: 12px;
+  background: #fff;
+  font-size: 16px;
+}
+
+.two-col {
+  display: flex;
+  gap: 20px;
+}
+
+.contact-btn {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 16px 30px;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.response-time {
+  text-align: center;
+  margin-top: 14px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .premium-contact-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .contact-heading {
+    font-size: 32px;
+  }
+
+  .two-col {
+    flex-direction: column;
+  }
+  .contact-left{
+    width: 100%;
+  }
+  .contact-form-card {
+    padding: 28px;
+    width: 100%;
+    margin: auto; */
+  }
+}
+
+</style>
+
+<section class="premium-contact-wrapper">
+
+  <div class="premium-contact-container">
+
+    <!-- LEFT SIDE -->
+    <div class="contact-left">
+
+      <h2 class="contact-heading">
+        {{ section.settings.heading }}
+      </h2>
+
+      <div class="contact-icons">
+        {% for block in section.blocks %}
+          {% if block.type == 'contact_icon' %}
+            <div class="contact-icon-item phone">
+              {% if block.settings.icon_svg != blank %}
+                <img src="{{ block.settings.icon_svg | image_url: width: 40 }}" alt="contact icon" width="32" height="32">
+              {% else %}
+                <div class="placeholder-icon"></div>
+              {% endif %}
+              <p>Phone Number</p>
+              <p>{{ block.settings.contact_info }}</p>
+            </div>
+          {% elsif block.type == 'contact_email' %}
+            <div class="contact-icon-item email">
+              {% if block.settings.icon_svg2 != blank %}
+                <img src="{{ block.settings.icon_svg2 | image_url: width: 40 }}" alt="contact icon" width="32" height="32">
+              {% else %}
+                <div class="placeholder-icon"></div>
+              {% endif %}
+              <p>Email</p>
+              <p>{{ block.settings.email }}</p>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+    </div>
+
+    <!-- RIGHT SIDE FORM -->
+    <div class="contact-form-card">
+
+      <h3 class="form-title">Send Us A Message</h3>
+
+      {% form 'contact', class: 'premium-contact-form' %}
+
+        <div class="form-row">
+          <input type="text" name="contact[name]" placeholder="Name" required>
+        </div>
+
+        <div class="form-row two-col">
+          <input type="email" name="contact[email]" placeholder="Email" required>
+          <input type="text" name="contact[phone]" placeholder="Telephone">
+        </div>
+
+        <div class="form-row">
+          <textarea name="contact[body]" placeholder="Your message" rows="5"></textarea>
+        </div>
+
+        <button class="contact-btn" type="submit">Send Message</button>
+
+        <p class="response-time">Response time in 24–48 hours</p>
+
+      {% endform %}
+
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Contact Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Would you like to get in touch with us?"
+    },
+            {
+                "type": "range",
+                "id": "margin_top",
+                "label": "Margin-top",
+                 "step": 1,
+                 "min": 0,
+                 "max": 100,
+                 "default": 15
+            },
+            {
+                "type": "range",
+                "id": "margin_bottom",
+                "label": "Margin-bottom",
+                 "step": 1,
+                 "min": 0,
+                 "max": 100,
+                 "default": 93
+            }
+  ],
+  "blocks": [
+    {
+      "type": "contact_icon",
+      "name": "Contact Icon",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon_svg",
+          "label": "Upload SVG Icon"
+        },
+        {
+            "type": "text",
+            "id": "contact_info",
+            "label": "Phone Number"
+        }
+        
+      ]
+    },
+    {
+      "type": "contact_email",
+      "name": "Contact Email",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon_svg2",
+          "label": "Upload SVG Icon"
+        },
+        {
+            "type": "text",
+            "id": "email",
+            "label": "Email"
+        }
+        
+      ]
+    }
+  ],
+  "max_blocks": 2,
+  "presets": [
+    {
+      "name": "Contact Section"
+    }
+  ]
+}
+{% endschema %}

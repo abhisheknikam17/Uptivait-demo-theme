@@ -24,8 +24,9 @@
         width: 100%;
         display: flex;
         flex-direction: column;
+        /* font-style: 55 Roman; */
         position: absolute;
-        top: 30%;
+        top: {{ section.settings.top_position }}%;
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 2;
@@ -52,6 +53,8 @@
 .On{
     opacity: 10;
 }
+
+
 .hero-image-mobile{
     display: none;
 }
@@ -63,18 +66,25 @@
         overflow: hidden !important;
         border-radius: 12px;
     }
-    .hero-image{
-        display: none !important;
-    }
+    
+    
+    
+    
+
     .hero-image-mobile{
         display: block;
-        max-height: 600px;
+        object-fit: cover;
         width: 400px;
-        display: block;
+        
         border-radius: 12px;
         overflow: hidden;
         
-        }
+    }
+    .hero-image{
+        display: none !important;
+    }
+
+
     .hero-image-banner-{{ section.id }}{
         height:100%;
         display:block;
@@ -88,7 +98,7 @@
     {% if section.settings.image != blank %}
      <div class="banner-img {{ section.settings.opacity }}" >
         
-        <img src="{{ section.settings.image | image_url: width: 2000 }}" alt="Hero image" height="auto" width="2000;" class="hero-image" style="filter:brightness({{ section.settings.brightness_img }}); height:{{ section.settings.desktopbannerheight }}vh">
+        <img src="{{ section.settings.image | image_url: width: 2000 }}" alt="Hero image" height="auto" width="2000;" class="hero-image" style="filter:brightness({{ section.settings.brightness_img }}); height:{{ section.settings.desktopbannerheight }}vh;">
         {% if section.settings.enable_mobile_img == 'yes' %}
          <img src="{{ section.settings.mobile_img | image_url: width: 400 }}" alt="Hero image" height="auto" width="400px;" class="hero-image-mobile" style="filter:brightness({{ section.settings.brightness_img }}); height:{{ section.settings.mobilebannerheight }}vh;">
         {% endif %}
@@ -141,6 +151,16 @@
                 "id": "mobile_img",
                 "label": "Select for Mobile",
                 "visible_if": "{{ section.settings.enable_mobile_img == 'yes' }}"
+            },
+            {
+                "type": "range",
+                "id": "top_position",
+                "label": "From-top",
+                 "step": 5,
+                 "min": 0,
+                 "max": 100,
+                 "default": 30,
+                 "unit": "%"
             },
             {
                 "type": "range",

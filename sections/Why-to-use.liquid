@@ -1,0 +1,482 @@
+<style>
+    .whyuse-section-{{ section.id }} {
+  width: 100%;
+  margin-top:{{ section.settings.margin_top  }}px ;
+  margin-bottom:{{ section.settings.margin_bottom  }}px ;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 40px 0;
+}
+
+/* HEADER */
+.whyuse-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.whyuse-header h1{
+  text-align: center;
+  font-size: 40px;
+}
+
+.whyuse-subtext {
+  max-width: 600px;
+  margin: 10px auto;
+  font-size: 18px;
+  opacity: .8;
+}
+
+/* TAB BUTTONS */
+.whyuse-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  margin: 35px 0;
+}
+
+.whyuse-tab-btn {
+  padding: 12px 28px;
+  border-radius: 40px;
+  border: 1px solid #1A1A1A;
+  background: transparent;
+  cursor: pointer;
+  font-family: 'Neue Haas Grotesk Display Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+  transition: 0.3s;
+}
+/* Recovery */
+
+
+
+
+.whyuse-tab-btn.active {
+  background: #1A1A1A;
+  color: white;
+}
+
+/* MAIN LAYOUT */
+.whyuse-content-wrapper {
+    max-width: 85%;
+    margin: auto;
+  display: flex;
+  gap: 40px;
+  padding: 15px 0;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* IMAGE */
+.whyuse-image-wrapper {
+  width: 50%;
+}
+
+.whyuse-img {
+  width: 100%;
+  border-radius: 24px;
+  max-height: 401px;
+  object-fit: cover;
+
+  opacity: 0;
+  transform: scale(0.96);
+  transition: opacity .45s ease, transform .45s ease;
+  position: absolute;
+}
+
+.whyuse-img.active {
+  opacity: 1;
+  transform: scale(1);
+  position: relative;
+}
+
+/* INFO SIDE */
+.whyuse-info-wrapper {
+  width: 40%;
+  position: relative;
+}
+
+.whyuse-info {
+  opacity: 0;
+  transform: scale(0.97);
+  transition: opacity .45s ease, transform .45s ease;
+  position: absolute;
+}
+
+.whyuse-info.active {
+  opacity: 1;
+  transform: scale(1);
+  position: relative;
+}
+
+/* CIRCLE */
+
+.circle-container {
+  max-width: 472px;
+  text-align: center;
+  padding: 25px 152px 65px 154px;
+  border: 1px solid hsla(0, 0%, 0%, 0.31);
+  border-radius: 24px;
+  /* height: 166px; */
+  position: relative;
+  /* margin: auto; */
+}
+
+.progress-ring {
+  width: 166px;
+  height: 166px;
+  transform: rotate(45deg);
+}
+
+/* Circle width is now 166px; radius 70 gives it good thickness */
+.ring-bg {
+  fill: none;
+  stroke: #E6E6E6;
+  stroke-width: 14;
+}
+
+.ring-progress {
+  fill: none;
+  stroke-width: 14;
+  stroke-linecap: butt;
+  stroke-dasharray: 439; /* updated for r=70 → 2πr = 439 */
+  stroke-dashoffset: 439;
+  transition: stroke-dashoffset 1.5s ease;
+}
+
+.percent-text {
+  position: absolute;
+  top: 43%;
+  left: 51%;
+  text-align: center;
+  /* pointer-events: none; */
+  transform: translate(-50%, -50%);
+  
+}
+.percent-text h2{
+  /* max-width: 70px; */
+  max-height: 48px;
+  font-size: 40px;
+  font-weight: 500;
+font-family: 'Neue Haas Grotesk Display Pro';
+
+}
+.whyuse-benefit{
+    position: absolute;
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: 500;
+   text-wrap: wrap;
+   line-height: 21px;
+}
+.whyuse-desc{
+    max-width: 482px;
+    /* text-align: center; */
+    margin-top: 39px;
+}
+/* Increased Recovery */
+
+
+
+
+
+
+/* Ellipse 82 */
+
+/* Tablet */
+@media (max-width: 1150px) {
+  .whyuse-content-wrapper {
+    flex-direction: column;
+    padding: 0;
+    gap: 25px;
+  }
+
+  .whyuse-image-wrapper,
+  .whyuse-info-wrapper {
+    width: 100%;
+  }
+
+  .whyuse-header h1{
+  text-align: center;
+  font-size: 32px;
+}
+
+  .circle-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 35px 50px 55px 50px;
+  }
+  .percent-text {
+  position: absolute;
+  top: 47%;
+  left: 51%;
+  text-align: center;
+  /* pointer-events: none; */
+  transform: translate(-50%, -50%);
+  
+}
+  .whyuse-tabs {
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+  .whyuse-desc{
+    max-width: 100%;
+    margin: auto;
+    text-align: center;
+    margin-top: 23px;
+}
+.whyuse-benefit{
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 21px;
+}
+.whyuse-tab-btn{
+    font-size: 16px;
+    padding: 12px 16px;
+}
+
+}
+
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .whyuse-content-wrapper {
+    flex-direction: column;
+    padding: 0;
+    gap: 25px;
+  }
+
+  .whyuse-image-wrapper,
+  .whyuse-info-wrapper {
+    width: 100%;
+  }
+
+  .whyuse-header h1{
+  text-align: center;
+  font-size: 32px;
+}
+
+  .circle-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 35px 50px 55px 50px;
+  }
+  .percent-text {
+  position: absolute;
+  top: 47%;
+  left: 51%;
+  text-align: center;
+  /* pointer-events: none; */
+  transform: translate(-50%, -50%);
+  
+}
+  .whyuse-tabs {
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+  .whyuse-desc{
+    max-width: 100%;
+    margin: auto;
+    text-align: center;
+    margin-top: 23px;
+}
+.whyuse-benefit{
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 21px;
+}
+.whyuse-tab-btn{
+    font-size: 16px;
+    padding: 12px 16px;
+}
+
+}
+
+</style>
+
+
+<section class="whyuse-section-{{ section.id }}">
+  <div class="whyuse-header">
+    <h1>{{ section.settings.main_heading }}</h1>
+    <p class="whyuse-subtext">{{ section.settings.subtext }}</p>
+  </div>
+
+  <!-- BUTTONS -->
+  <div class="whyuse-tabs">
+    {% for block in section.blocks %}
+      <button 
+        class="whyuse-tab-btn {% if forloop.first %}active{% endif %}" 
+        data-tab="tab-{{ block.id }}"
+      >
+        {{ block.settings.tab_label }}
+      </button>
+    {% endfor %}
+  </div>
+
+  <div class="whyuse-content-wrapper">
+
+    <!-- IMAGE -->
+    <div class="whyuse-image-wrapper">
+      {% for block in section.blocks %}
+        <img 
+          src="{{ block.settings.image | image_url: width: 900 }}"  
+          alt="{{ block.settings.tab_label }}"
+          class="whyuse-img tab-content tab-{{ block.id }} {% if forloop.first %}active{% endif %}"
+          width="668"
+          height="401"
+        >
+      {% endfor %}
+    </div>
+
+    <!-- PERCENT + TEXT -->
+    <div class="whyuse-info-wrapper">
+      {% for block in section.blocks %}
+      <div class="whyuse-info tab-content tab-{{ block.id }} {% if forloop.first %}active{% endif %}">
+        
+        <div class="circle-container">
+            <div class="svg-container">
+            <svg class="progress-ring" width="166" height="166">
+                <defs>
+                <linearGradient id="ringGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#BD9162"/>
+                    <stop offset="100%" stop-color="#57432D"/>
+                </linearGradient>
+                </defs>
+
+                <circle class="ring-bg" cx="83" cy="83" r="70" />
+                <circle 
+                class="ring-progress"
+                cx="83" cy="83" r="70"
+                data-percentage="{{ block.settings.percentage }}"
+                stroke="url(#ringGradient)"
+                />
+            </svg>
+            </div>
+            <div class="percent-text">
+                <h2>{{ block.settings.percentage }}%</h2>
+            </div>
+            <div class="text">
+            <p class="whyuse-benefit">{{ block.settings.benefit_text }}</p>
+            </div>
+         </div>
+
+
+               <div class="whyuse-desc"> 
+                <p class="whyuse-desc">{{ block.settings.description }}</p>
+               </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const CIRC = 439;  // circumference as per the new width of circle
+  const buttons = document.querySelectorAll(".whyuse-tab-btn");
+  const contents = document.querySelectorAll(".tab-content");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+
+      // Activate button
+      buttons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      // Identify target tab
+      const tab = btn.dataset.tab;
+
+      // Switch content
+      contents.forEach(el => {
+        el.classList.remove("active");
+        if (el.classList.contains(tab)) el.classList.add("active");
+      });
+
+      // Animate circle
+      const circle = document.querySelector(`.${tab} .ring-progress`);
+      const percent = circle.dataset.percentage;
+    
+    const offset = CIRC - ( CIRC * percent ) / 100;
+      circle.style.strokeDashoffset = offset;
+    });
+  });
+
+  // Run initial circle
+  const first = document.querySelector(".ring-progress");
+  if (first) {
+    const percent = first.dataset.percentage;
+    // const offset = 4 - (314 * percent) / 100;
+    const offset = CIRC - (CIRC * percent) / 100;
+    first.style.strokeDashoffset = offset;
+  }
+});
+
+</script>
+
+{% schema %}
+{
+  "name": "Why Use Section",
+  "settings": [
+    { "type": "text", "id": "main_heading", "label": "Main Heading", "default": "Why to use?" },
+    { "type": "textarea", "id": "subtext", "label": "Subtext", "default": "Traditional supplements can be bulky, easy to forget, or feel clinical." },
+    {
+                "type": "range",
+                "id": "margin_top",
+                "label": "margin-top",
+                 "step": 1,
+                 "min": 0,
+                 "max": 100,
+                 "default": 1
+            },
+            {
+                "type": "range",
+                "id": "margin_bottom",
+                "label": "margin-bottom",
+                 "step": 1,
+                 "min": 0,
+                 "max": 100,
+                 "default": 1
+            }
+  ],
+  "blocks": [
+    {
+      "type": "tab",
+      "name": "Tab",
+      "settings": [
+        { "type": "text", "id": "tab_label", "label": "Tab Label (Example: Sleep routine)" },
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "range", "id": "percentage", "label": "Percentage", "min": 0, "max": 100, "default": 90 },
+        { "type": "text", "id": "benefit_text", "label": "Benefit Text", "default": "Improved Wellness" },
+        { "type": "textarea", "id": "description", "label": "Description", "default": "Lorem ipsum dolor sit amet..." }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [
+    { "name": "Why Use Section" }
+  ]
+}
+{% endschema %}
+
