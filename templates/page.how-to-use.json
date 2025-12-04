@@ -18,7 +18,7 @@
           "settings": {
             "text": "How to Use",
             "textsize": 48,
-            "textsize_mobile": 40,
+            "textsize_mobile": 32,
             "left_rightpadding": false,
             "headingalign": "center",
             "headingalign_mob": "center",
@@ -35,13 +35,15 @@
       "name": "Up Banner",
       "settings": {
         "image": "shopify://shop_images/product_picture_4.jpg",
+        "mobile_img": "shopify://shop_images/product_picture_4.jpg",
+        "top_position": 50,
         "brightness_img": 0.6,
         "padding_top": 1,
         "margin_top": 15,
         "margin_bottom": 15,
-        "mobilebannerheight": 90,
+        "mobilebannerheight": 19,
         "desktopbannerheight": 30,
-        "enable_mobile_img": "no",
+        "enable_mobile_img": "yes",
         "videourl": "",
         "content_direction_column": "Column_Center",
         "content_direction_row": "Row_Left",
@@ -153,7 +155,8 @@
         "bgcolor": "",
         "bgcolordesktop": "",
         "flex_direction": "row",
-        "width": "80"
+        "width": "80",
+        "image_size": "50"
       }
     },
     "brand_quote_TAQitj": {
@@ -220,7 +223,55 @@
         "bgcolor": "",
         "bgcolordesktop": "hsla(36, 33%, 88%, 0.42)",
         "flex_direction": "row-reverse",
-        "width": "80"
+        "width": "80",
+        "image_size": "50"
+      }
+    },
+    "why_to_use_ULm4eq": {
+      "type": "Why-to-use",
+      "blocks": {
+        "tab_LTQndE": {
+          "type": "tab",
+          "settings": {
+            "tab_label": "Sleep routine",
+            "image": "shopify://shop_images/neckpain.jpg",
+            "percentage": 90,
+            "benefit_text": "Improved Wellness",
+            "description": "Traditional supplements can be bulky, easy to forget, or feel clinical. We wanted to change that. The Uptavit Ring Chain transforms wellness into something you can wear proudly — a symbol of health and style in one."
+          }
+        },
+        "tab_MJkhTb": {
+          "type": "tab",
+          "settings": {
+            "tab_label": "Stress level",
+            "image": "shopify://shop_images/blood.jpg",
+            "percentage": 95,
+            "benefit_text": "Improved Wellness",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          }
+        },
+        "tab_Y9YPBp": {
+          "type": "tab",
+          "settings": {
+            "tab_label": "Recovery",
+            "image": "shopify://shop_images/recoveryimg.jpg",
+            "percentage": 91,
+            "benefit_text": "Improved Wellness",
+            "description": "Traditional supplements can be bulky, easy to forget, or feel clinical. We wanted to change that. The Uptavit Ring Chain transforms wellness into something you can wear proudly — a symbol of health and style in one."
+          }
+        }
+      },
+      "block_order": [
+        "tab_LTQndE",
+        "tab_MJkhTb",
+        "tab_Y9YPBp"
+      ],
+      "name": "Why to use (Tab layout)",
+      "settings": {
+        "main_heading": "Why to use?",
+        "subtext": "Traditional supplements can be bulky, easy to forget, or feel clinical.",
+        "margin_top": 62,
+        "margin_bottom": 1
       }
     },
     "features_info_jKXBQ9": {
@@ -274,6 +325,7 @@
     "zig_zagsection_TFQJhi",
     "brand_quote_TAQitj",
     "zig_zagsection_KEi4h9",
+    "why_to_use_ULm4eq",
     "features_info_jKXBQ9"
   ]
 }

@@ -1,0 +1,211 @@
+<style>
+  .product-page-container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    padding: 40px 0;
+    max-width: 1300px;
+    margin: auto;
+  }
+
+  .product-gallery-wrapper {
+    width: 50%;
+    background: #ffffff;
+    padding: 20px;
+  }
+
+  .product-info-wrapper {
+    width: 50%;
+  }
+
+  .product-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .product-price {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .product-description {
+    margin-top: 25px;
+    line-height: 1.6;
+  }
+
+  /* Splide default styling already included in your theme */
+  .product_img img {
+    width: 100%;
+    border-radius: 14px;
+  }
+
+  .product-thumbs .splide__slide {
+    opacity: 0.5;
+    cursor: pointer;
+  }
+
+  .product-thumbs .is-active {
+    opacity: 1;
+  }
+
+  .product-arrows{
+      display: block;
+     
+  }
+
+   .perv-svg2{
+     position: absolute;
+     transform: translate(-50% -50%);
+     left: 50%;
+     top: 50%;
+  }
+  .next-svg2{
+    position: absolute;
+     transform: translate(-50% -50%);
+     left: 50%;
+     top: 50%;
+  }
+
+  .product-thumbs img {
+    border-radius: 10px;
+    height: 80px;
+    object-fit: cover;
+  }
+</style>
+
+<section class="product-page-container">
+
+  <!-- LEFT 50% — MAIN GALLERY -->
+  <div class="product-gallery-wrapper">
+
+    {%- assign media = product.media -%}
+
+    <!-- Main Splide -->
+    <div id="ProductMainSplide-{{ section.id }}" class="splide product-main-slider">
+      <div class="splide__track wrapper">
+        <ul class="splide__list ">
+          {% for item in media %}
+            <li class="splide__slide product_img">
+              {{ item | image_url: width: 1500 | image_tag }}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      
+    </div>
+
+    <!-- Thumbnails -->
+    <div id="ProductThumbsSplide-{{ section.id }}" class="splide product-thumbs" style="margin-top: 15px;">
+      <div class="splide__track">
+        <ul class="splide__list">
+          {% for item in media %}
+            <li class="splide__slide">
+              {{ item | image_url: width: 300 | image_tag }}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- RIGHT 50% — PRODUCT INFORMATION -->
+  <div class="product-info-wrapper">
+
+    <!-- Title -->
+    <h1 class="product-title">{{ product.title }}</h1>
+
+    <!-- Price -->
+    <div class="product-price">
+      {{ product.price | money }}
+    </div>
+
+    <!-- Variant Selector -->
+    {% if product.variants.size > 1 %}
+      <form method="post" action="{{ routes.cart_add_url }}" id="addToCartForm-{{ section.id }}">
+        <select name="id" class="variant-select" style="padding: 10px; margin-bottom: 20px;">
+          {% for variant in product.variants %}
+            <option value="{{ variant.id }}">
+              {{ variant.title }} - {{ variant.price | money }}
+            </option>
+          {% endfor %}
+        </select>
+
+        <button type="submit" class="add-to-cart" style="padding: 14px 25px; background:black; color:white; border:none; cursor:pointer;">
+          Add to Cart
+        </button>
+      </form>
+    {% else %}
+      <form method="post" action="{{ routes.cart_add_url }}">
+        <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+        <button type="submit" class="add-to-cart" style="padding: 14px 25px; background:black; color:white; border:none; cursor:pointer;">
+          Add to Cart
+        </button>
+      </form>
+    {% endif %}
+
+    <!-- Description -->
+    {% if product.description != blank %}
+      <div class="product-description">
+        {{ product.description }}
+      </div>
+    {% endif %}
+
+  </div>
+
+</section>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const mainSlider = new Splide('#ProductMainSplide-{{ section.id }}', {
+    type: 'loop',
+    pagination: true,
+    arrows: true,
+    rewind: true,
+    speed: 600,
+    gap: '10px',
+    classes: {
+		arrows: 'splide__arrows product-arrows',
+		arrow : 'splide__arrow your-class-arrow',
+		prev  : 'splide__arrow--prev perv-svg2',
+		next  : 'splide__arrow--next next-svg2',
+  },
+  });
+
+  const thumbsSlider = new Splide('#ProductThumbsSplide-{{ section.id }}', {
+    fixedWidth: 80,
+    fixedHeight: 80,
+    gap: 10,
+    rewind: true,
+    pagination: false,
+    cover: true,
+    isNavigation: true,
+    arrows: false,
+    focus: 'center',
+    breakpoints: {
+      768: { fixedWidth: 60, fixedHeight: 60 }
+    }
+  });
+
+  mainSlider.sync(thumbsSlider);
+  mainSlider.mount();
+  thumbsSlider.mount();
+});
+</script>
+
+
+{% schema %}
+{
+  "name": "Product Page Main Layout",
+  "settings": [],
+  "presets": [
+    {
+        "name": "Product Page Main"
+    }
+  ]
+}
+{% endschema %}

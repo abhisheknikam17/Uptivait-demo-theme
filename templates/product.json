@@ -16,20 +16,20 @@
           "type": "_product-media-gallery",
           "static": true,
           "settings": {
-            "media_presentation": "grid",
+            "media_presentation": "carousel",
             "media_columns": "two",
             "image_gap": 4,
             "large_first_image": true,
-            "icons_style": "none",
-            "slideshow_controls_style": "counter",
+            "icons_style": "chevron",
+            "slideshow_controls_style": "dots",
             "slideshow_mobile_controls_style": "dots",
             "thumbnail_position": "right",
             "thumbnail_width": 44,
-            "aspect_ratio": "1/1.25",
-            "constrain_to_viewport": false,
+            "aspect_ratio": "1",
+            "constrain_to_viewport": true,
             "media_fit": "cover",
-            "media_radius": 0,
-            "extend_media": true,
+            "media_radius": 24,
+            "extend_media": false,
             "zoom": true,
             "video_loop": false,
             "hide_variants": true,
@@ -469,6 +469,7 @@
           ]
         }
       },
+      "disabled": true,
       "settings": {
         "content_width": "content-center-aligned",
         "desktop_media_position": "left",
@@ -478,6 +479,74 @@
         "color_scheme": "",
         "padding-block-start": 0,
         "padding-block-end": 0
+      }
+    },
+    "product_main_icP3Ff": {
+      "type": "Product-main",
+      "disabled": true,
+      "name": "Product Info",
+      "settings": {}
+    },
+    "product_maintwo_VwLcrq": {
+      "type": "Product-maintwo",
+      "blocks": {
+        "testimonial_section_d9qmUP": {
+          "type": "testimonial_section",
+          "settings": {
+            "rating": 4.5,
+            "review_text2": "I love that it looks like jewelry, but secretly supports my health. Never seen anything like it.",
+            "reviewer_name2": "-Jessica L."
+          }
+        },
+        "bullet_aKMJEP": {
+          "type": "bullet",
+          "settings": {
+            "text": "Fashion Meets Function",
+            "tick_image": "shopify://shop_images/Check_fill.svg"
+          }
+        },
+        "bullet_Pik7zX": {
+          "type": "bullet",
+          "settings": {
+            "text": "Vitamin Support On-The-Go",
+            "tick_image": "shopify://shop_images/Check_fill.svg"
+          }
+        },
+        "bullet_V6NXKY": {
+          "type": "bullet",
+          "settings": {
+            "text": "Discreet & Stylish",
+            "tick_image": "shopify://shop_images/Check_fill.svg"
+          }
+        },
+        "bullet_nNANNx": {
+          "type": "bullet",
+          "settings": {
+            "text": "Safe & Effective",
+            "tick_image": "shopify://shop_images/Check_fill.svg"
+          }
+        },
+        "accordion_YTj3rz": {
+          "type": "accordion",
+          "settings": {
+            "title": "",
+            "content": ""
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_section_d9qmUP",
+        "bullet_aKMJEP",
+        "bullet_Pik7zX",
+        "bullet_V6NXKY",
+        "bullet_nNANNx",
+        "accordion_YTj3rz"
+      ],
+      "name": "Product Gallery and Info",
+      "settings": {
+        "subtitle": "Wellness you can wear.",
+        "payment_image": "shopify://shop_images/amexsvg.svg",
+        "trust_stars": "shopify://shop_images/trust_hvid_5_stjerner_6.png"
       }
     },
     "product_recommendations_qggXJq": {
@@ -658,6 +727,7 @@
       "block_order": [
         "text_cbcgyb"
       ],
+      "disabled": true,
       "name": "t:names.product_recommendations",
       "settings": {
         "product": "{{ closest.product }}",
@@ -771,7 +841,8 @@
             "mobile_size": 14,
             "subtextcolor": "#1a1a1a",
             "subtextalign": "center",
-            "subtextalign_mob": "center"
+            "subtextalign_mob": "center",
+            "text-width": "100"
           },
           "blocks": {}
         }
@@ -781,20 +852,92 @@
         "customheading_cFPqqj",
         "herotext_CV38yb"
       ],
+      "disabled": true,
       "name": "Up Banner",
       "settings": {
         "image": "shopify://shop_images/prodbanner.jpg",
         "mobile_img": "shopify://shop_images/prodimg.png",
+        "top_position": 30,
         "brightness_img": 1,
         "padding_top": 0,
         "margin_top": 79,
         "margin_bottom": 100,
         "mobilebannerheight": 75,
+        "desktopbannerheight": 100,
         "enable_mobile_img": "yes",
         "videourl": "",
         "content_direction_column": "Column_Center",
         "content_direction_row": "Row_Center",
         "content_gap": "small",
+        "opacity": "off"
+      }
+    },
+    "prod_sec_banner_x4tUNz": {
+      "type": "Prod-sec-Banner",
+      "blocks": {
+        "subheading_Q7Hkct": {
+          "type": "_subheading",
+          "name": "Up-Subheading",
+          "settings": {
+            "subheading": "How It Helps",
+            "subheadcolor": "#1a1a1a",
+            "subhead_size": 24,
+            "mobsubhead_size": 24,
+            "subheadalign": "center"
+          },
+          "blocks": {}
+        },
+        "customheading_yP9TfA": {
+          "type": "_customheading",
+          "name": "Up-Heading",
+          "settings": {
+            "text": "The Uptavit Ring Chain is more than an accessory",
+            "textsize": 40,
+            "textsize_mobile": 40,
+            "left_rightpadding": false,
+            "headingalign": "center",
+            "headingalign_mob": "center",
+            "headingcolor": "#1a1a1a",
+            "headingopacity": 1,
+            "bottomgap": 10
+          },
+          "blocks": {}
+        },
+        "herotext_tNpHdM": {
+          "type": "_herotext",
+          "name": "Subtext",
+          "settings": {
+            "hero_text": "The Uptavit Ring Chain is more than an accessory — it’s a simple, wearable solution for daily wellness. Whether you’re on the move, at work, or out with friends, it keeps your health routine effortless and discreet.",
+            "text_size": 18,
+            "mobile_size": 14,
+            "subtextcolor": "#1a1a1a",
+            "subtextalign": "center",
+            "subtextalign_mob": "center",
+            "text-width": "55"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "subheading_Q7Hkct",
+        "customheading_yP9TfA",
+        "herotext_tNpHdM"
+      ],
+      "name": "Product Page Banner",
+      "settings": {
+        "image": "shopify://shop_images/prodpagebanner.png",
+        "top_position": 0,
+        "brightness_img": 1,
+        "padding_top": 0,
+        "margin_top": 79,
+        "margin_bottom": 15,
+        "mobilebannerheight": 90,
+        "desktopbannerheight": 100,
+        "enable_mobile_img": "yes",
+        "videourl": "",
+        "content_direction_column": "Column_Center",
+        "content_direction_row": "Row_Left",
+        "content_gap": "large",
         "opacity": "off"
       }
     },
@@ -955,7 +1098,9 @@
       "name": "Brand Quote",
       "settings": {
         "quote": "\"We design products that don’t just work — they blend into your life seamlessly, helping you feel confident, healthy, and in control.\"",
-        "textsize": 40
+        "textsize": 40,
+        "margin_top": 92,
+        "margin_bottom": 15
       }
     },
     "zig_zagsection_eL7QLR": {
@@ -986,7 +1131,8 @@
             "mobile_size": 14,
             "subtextcolor": "#1a1a1a",
             "subtextalign": "left",
-            "subtextalign_mob": "center"
+            "subtextalign_mob": "center",
+            "text-width": "100"
           },
           "blocks": {}
         },
@@ -1014,7 +1160,8 @@
         "bgcolor": "",
         "bgcolordesktop": "hsla(36, 33%, 88%, 0.42)",
         "flex_direction": "row-reverse",
-        "width": "80"
+        "width": "80",
+        "image_size": "50"
       }
     },
     "faq_section_rcf948": {
@@ -1118,9 +1265,12 @@
   },
   "order": [
     "main",
+    "product_main_icP3Ff",
+    "product_maintwo_VwLcrq",
     "product_recommendations_qggXJq",
     "brand_slider_VP97CB",
     "hero_section_NMHFq8",
+    "prod_sec_banner_x4tUNz",
     "features_info_x8ynm8",
     "comparsion_section_mf8m7D",
     "reviews_section_TnqxFC",

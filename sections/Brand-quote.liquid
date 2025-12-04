@@ -1,6 +1,9 @@
 <style>
+    .brand-quote__container-{{ section.id }}{
+        margin: {{ section.settings.margin_top }}px auto;
+    }
     @media screen and (max-width: 749px){
-        .brand-quote__container{
+        .brand-quote__container-{{ section.id }}{
             width: 85%;
             
         }
@@ -10,7 +13,7 @@
     }
 </style>
 
-<div class="brand-quote__container" style="margin: 70px auto; max-width: 1100px;">
+<div class="brand-quote__container-{{ section.id }}" style=" max-width: 1100px;">
     {% comment %} {% content_for 'blocks' %} {% endcomment %}
      <h1 class="quote" style="font-weight: 300; text-align: left; font-size: {{ section.settings.textsize }}px;">{{ section.settings.quote |  strip_html }}</h1>
 </div>
@@ -33,6 +36,24 @@
                 "step": 1,
                 "unit": "px",
                 "default": 40
+        },
+        {
+                "type": "range",
+                "id": "margin_top",
+                "label": "Margin-top",
+                 "step": 1,
+                 "min": 0,
+                 "max": 100,
+                 "default": 15
+            },
+            {
+                "type": "range",
+                "id": "margin_bottom",
+                "label": "Margin-bottom",
+                 "step": 1,
+                 "min": 0,
+                 "max": 100,
+                 "default": 15
             }
     ],
     "presets": [

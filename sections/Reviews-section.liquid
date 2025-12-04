@@ -1,56 +1,97 @@
 <style>
+    .slider-container{
+        flex: 1;
+    
+    }
+    /* .review-slides{
+        width: 240px;
+    } */
   .review-card{
   border: 1px solid #FBE9D7;
   border-radius: 24px;
-  height: 628px;
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+  justify-content: space-between;
+  height: 100%;
   padding: 30px 20px;
   }
-  .reviewer-img{
-    width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin: 0 auto 8px;
+  .review-main-image{
+   min-width: 240px;
+   height: 430px;
   }
-  .splide__arrows{display: block;}
+  .review-stars{
+    display: flex;
+    gap: 5px;
+  }
+  .reviewer{
+    display: flex;
+    gap: 12px;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .reviewer-img{
+    width: 42px;
+  height: 44px;
+  border-radius: 50%;
+  object-position: center;
+  object-fit: contain;
+  margin-bottom:  8px;
+  }
+  .review-arrows{display: block;}
 
-.splide__pagination{
-  display: block;
-  margin: 30px 0;
-      bottom: -6.8em !important;
-    left: 47.5% !important;
-}
-.splide__arrow--prev {
-    left: 44%;
-}
-.splide__arrow{
-    background-color: #fff;
-    border: 1px solid #000000;
-   width: 56px;
-   height: 56px;
-  top: 100% !important;
-  transform: translateY(50%) !important;
-}
-.splide__arrow svg{
-     /* padding: 21px 24px !important; */
-}
-.splide__arrow--next{
-  right: 43%;
-}
-.splide:not(.is-overflow) .splide__pagination {
-    display: block;
-}
-.splide__pagination {
-    bottom: -5em;
-    left: 46%;
+.custom-pagination{
     padding: 0 1em;
     position: absolute;
     right: 0;
     z-index: 1;
+  display: block;
+  margin: 30px 0;
+    bottom: -6.8em ;
+    left: 47.5% ;
 }
-.splide__pagination:active{
-    width: 5px;
+/* .active-page{
+
+} */
+.active-page:active{
+   
+  background: #d1d1d1; 
+  opacity: 1 !important;
+  transition: background-color 0.3s ease;
 }
+.active-page.is-active{
+     width: 37px;
+  height: 8px;
+  border-radius: 24px;
+    background-color: #1a1a1a !important;
+  transform: none !important;
+  width: 40px;
+}
+
+.style-arrows{
+    background-color: #fff;
+    border: 1px solid #000000;
+    width: 56px;
+    height: 56px;
+    top: 100% ;
+    transform: translateY(50%) !important;
+}
+/* .review-arrows svg{
+    color: green;
+    /* padding: 21px 24px !important; */
+
+
+.prev-svg1{
+    left: 44% !important;
+}
+.next-svg1{
+  right: 41.3%;
+}
+.splide:not(.is-overflow) .custom-pagination {
+    display: block;
+}
+
+
 .review-heading{
   font-size: 48px;
   text-align: center;
@@ -68,18 +109,29 @@
   .review-card{
     padding: 30px 15px;
     height: 350px;
+    width: 190px;
+  }
+  .review-slides{
+    max-height: 350px;
+  }
+  .reviewer-img{
+    object-fit: cover;
+  }
+  .review-main-image{
+    max-height: 350px;
+    min-width: 190px;
   }
   .review-heading{
     font-size: 32px;
   }
-  .splide__arrow--next{
+  .next-svg1{
   right: 16% !important;
 }
-.splide__arrow .splide__arrow--perv{
-    left: 25% !important;
+.prev-svg1{
+    left: 29% !important;
 }
-.splide__pagination{
-    left: 39%;
+.custom-pagination{
+    left: 44%;
 }
 }
 </style>
@@ -89,49 +141,63 @@
 <div class="review-maincontainer">
 <section class="splide" id="splide_review-{{ section.id }}" aria-label="Reviews Slider">
      <h1 class="review-heading">What Our Customers Say</h1> 
-  <div class="splide__track">
+  <div class="splide__track slider-container">
     <ul class="splide__list">
       {% for block in section.blocks %}
         {% comment %} {% if block.type == 'image' 'or' block.type =='textarea' %} {% endcomment %}
          {% if block.type == 'image'  %}
 
-        <li class="splide__slide">
-          <img src="{{ block.settings.review_image | image_url: width: 240 }}" alt="" width="240" height="auto" loading="lazy">
+        <li class="splide__slide review-slides" style=" width: 240px;">
+          <img src="{{ block.settings.review_image | image_url: width: 240 }}" alt="" class="review-main-image" width="240" height="auto" loading="lazy">
         </li>
         {% endif %}
-        {% if block.type == 'review_section' %}
-            <li class="splide__slide">
-         <div class="reviews-wrapper" width="240px">
+         {% if block.type == 'review_section' %}
+            <li class="splide__slide review-slides" >
+         
  
     <div class="review-card" {{ block.shopify_attributes }}>
        <div class="review-stars">
-        {% for i in (1..block.settings.rating) %}
-          ⭐
+        {% assign full_stars = block.settings.rating | floor %}
+        {% assign has_half_star = block.settings.rating | modulo: 1 %}
+        {% for i in (1..full_stars) %}
+          <svg class="star full" viewBox="0 0 24 24" width="20" height="20" fill="#FACC15" aria-label="Full star"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.884 1.468 8.31L12 18.896l-7.404 4.604 1.468-8.31L0 9.306l8.332-1.151z"/></svg>
         {% endfor %}
+        {% if has_half_star == 0.5 %}
+          <svg class="star half" viewBox="0 0 24 24" width="20" height="20" aria-label="Half star">
+            <defs>
+              <linearGradient id="half">
+                <stop offset="50%" stop-color="#FACC15"/>
+                <stop offset="50%" stop-color="#E5E7EB"/>
+              </linearGradient>
+            </defs>
+            <path fill="url(#half)" d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.884 1.468 8.31L12 18.896l-7.404 4.604 1.468-8.31L0 9.306l8.332-1.151z"/>
+          </svg>
+        {% endif %}
       </div> 
-
 
       <p class="review-text">{{ block.settings.review_text }}</p>
       <div class="reviewer">
-         {% if block.settings.reviewer_photo  %}
+         {% if block.settings.profile_image %}
     <img
-      src="{{ block.settings.reviewer_photo | image_url: width: 45 }}"
+      src="{{ block.settings.profile_image | image_url: width: 45 }}"
       alt="{{ block.settings.reviewer_name }}"
       class="reviewer-img"
       width="45"
-    height="45"
+      height="45"
     >
          {% endif %}
         <p class="reviewer-name">{{ block.settings.reviewer_name }}</p>
       </div>
     </div>
   
-</div>
+
         </li>
+        
         {% endif %}
       {% endfor %}
     </ul>
   </div>
+   
 </section>
 </div>
 
@@ -157,6 +223,15 @@ document.addEventListener('DOMContentLoaded', function () {
         autoScroll: {
             speed: 1
         },
+        classes: {
+		arrows: 'splide__arrows review-arrows',
+		arrow : 'splide__arrow style-arrows',
+		prev  : 'splide__arrow--prev prev-svg1',
+		next  : 'splide__arrow--next next-svg1',
+        pagination: 'splide__pagination custom-pagination',
+		page      : 'splide__pagination__page active-page',
+  },
+
         breakpoints: {
             1024: {
                 perPage: 3

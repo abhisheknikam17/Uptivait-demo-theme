@@ -13,7 +13,8 @@
         margin-bottom:{{block.settings.subextgap}}px;
         color: {{block.settings.subtextcolor}};
         /* width:55%; */
-        
+        width: {{ block.settings.text-width }}%;
+        margin: auto;
         text-wrap: wrap;
         margin:auto
     }
@@ -108,6 +109,26 @@
             {
                 "value": "right",
                 "label":"Right"
+            }
+        ] 
+    },
+    {
+        "type":"select",
+        "id": "text-width",
+        "label":"Width",
+        "default": "100",
+        "options": [
+            {
+                "value": "100",
+                "label":"100%"
+            },
+            {
+                "value": "80",
+                "label":"80%"
+            },
+            {
+                "value": "55",
+                "label":"55%"
             }
         ] 
     }

@@ -1,0 +1,112 @@
+<style>
+  .product-gallery-wrapper {
+    width: 50%;
+    background: #ffffff;
+    padding: 20px;
+  }
+
+  .product_img img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  .product-thumbs .splide__slide {
+    opacity: 0.5;
+    cursor: pointer;
+  }
+
+  .product-thumbs .is-active {
+    opacity: 1;
+  }
+
+  .product-thumbs img {
+    border-radius: 8px;
+  }
+</style>
+
+<div class="product-gallery-wrapper">
+
+  {%- assign media = product.media -%}
+
+  <!-- MAIN SLIDER -->
+  <div id="ProductMainSplide-{{ section.id }}" class="splide product-main-slider">
+    <div class="splide__track">
+      <ul class="splide__list">
+        {% for item in media %}
+          <li class="splide__slide">
+            {{ item | image_url: width: 1200 | image_tag }}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <!-- Next / Prev arrows -->
+    <div class="splide__arrows">
+      <button class="splide__arrow splide__arrow--prev">‹</button>
+      <button class="splide__arrow splide__arrow--next">›</button>
+    </div>
+  </div>
+
+
+  <!-- THUMBNAILS -->
+  <div id="ProductThumbsSplide-{{ block.id }}" class="splide product-thumbs" style="margin-top: 15px;">
+    <div class="splide__track">
+      <ul class="splide__list">
+        {% for item in media %}
+          <li class="splide__slide product_img">
+            {{ item | image_url: width: 200 | image_tag }}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var mainSlider = new Splide('#ProductMainSplide-{{ section.id }}', {
+    type: 'loop',
+    pagination: true,
+    arrows: true,
+    rewind: true,
+    speed: 600,
+    gap: '10px',
+  });
+
+  var thumbsSlider = new Splide('#ProductThumbsSplide-{{ section.id }}', {
+    fixedWidth: 80,
+    fixedHeight: 80,
+    gap: 10,
+    rewind: true,
+    pagination: false,
+    cover: true,
+    isNavigation: true,
+    arrows: false,
+    focus: 'center',
+    breakpoints: {
+      768: { fixedWidth: 60, fixedHeight: 60 }
+    }
+  });
+
+  mainSlider.sync(thumbsSlider);
+  mainSlider.mount();
+  thumbsSlider.mount();
+});
+</script>
+
+
+{% schema %}
+{
+  "name": "Product Gallery (Splide)",
+  "settings": [],
+  "presets": [
+    {
+        "name": "Product Gallery(splide)"
+    }
+  ]
+}
+{% endschema %}

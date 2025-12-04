@@ -9,6 +9,48 @@
  */
 {
   "sections": {
+    "hero_section_VLDcgt": {
+      "type": "Hero-section",
+      "blocks": {
+        "customheading_hkpaBW": {
+          "type": "_customheading",
+          "name": "Up-Heading",
+          "settings": {
+            "text": "Contact Us",
+            "textsize": 48,
+            "textsize_mobile": 32,
+            "left_rightpadding": false,
+            "headingalign": "center",
+            "headingalign_mob": "center",
+            "headingcolor": "#ffffff",
+            "headingopacity": 1,
+            "bottomgap": 10
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "customheading_hkpaBW"
+      ],
+      "name": "Up Banner",
+      "settings": {
+        "image": "shopify://shop_images/product_picture_4.jpg",
+        "mobile_img": "shopify://shop_images/product_picture_4.jpg",
+        "top_position": 50,
+        "brightness_img": 0.6,
+        "padding_top": 1,
+        "margin_top": 15,
+        "margin_bottom": 15,
+        "mobilebannerheight": 18,
+        "desktopbannerheight": 33,
+        "enable_mobile_img": "yes",
+        "videourl": "",
+        "content_direction_column": "Column_Center",
+        "content_direction_row": "Row_Left",
+        "content_gap": "small",
+        "opacity": "off"
+      }
+    },
     "main": {
       "type": "main-page",
       "blocks": {
@@ -69,6 +111,7 @@
         "title",
         "content"
       ],
+      "disabled": true,
       "settings": {
         "content_direction": "column",
         "gap": 32,
@@ -115,6 +158,7 @@
       "block_order": [
         "contact_form_UwiCkQ"
       ],
+      "disabled": true,
       "name": "t:names.contact_form",
       "settings": {
         "content_direction": "column",
@@ -143,10 +187,41 @@
         "padding-block-start": 32,
         "padding-block-end": 84
       }
+    },
+    "contact_us_section_D9cLxt": {
+      "type": "Contact-us-section",
+      "blocks": {
+        "contact_icon_XggMwN": {
+          "type": "contact_icon",
+          "settings": {
+            "icon_svg": "shopify://shop_images/Phone_light.svg",
+            "contact_info": "23 23 23 23"
+          }
+        },
+        "contact_email_EHyBCB": {
+          "type": "contact_email",
+          "settings": {
+            "icon_svg2": "shopify://shop_images/email.svg",
+            "email": "Example@email.dk"
+          }
+        }
+      },
+      "block_order": [
+        "contact_icon_XggMwN",
+        "contact_email_EHyBCB"
+      ],
+      "name": "Premium Contact Section",
+      "settings": {
+        "heading": "Would you like to get in touch with us?",
+        "margin_top": 30,
+        "margin_bottom": 32
+      }
     }
   },
   "order": [
+    "hero_section_VLDcgt",
     "main",
-    "form"
+    "form",
+    "contact_us_section_D9cLxt"
   ]
 }

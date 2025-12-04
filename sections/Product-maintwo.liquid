@@ -1,0 +1,588 @@
+<style>
+/* 2 Column Layout */
+.product-page-container {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  width: 85%;
+  margin: auto;
+  border-top: 1px solid #0000000F;
+  padding: 40px 20px;
+}
+
+/* ---- LEFT: IMAGE GALLERY ---- */
+.product-gallery-wrapper {
+  width: 50%;
+  position: relative;
+}
+
+/* Best Seller Badge */
+.best-seller-badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: white;
+  padding: 8px 16px;
+  border-radius: 40px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 20;
+}
+
+.best-seller-dot {
+  width: 10px;
+  height: 10px;
+  background: #4CAF50;
+  border-radius: 50%;
+}
+
+/* Main Splide Images */
+.product-img-main img{
+    width: 100%;
+  max-width: 570px;
+  border-radius: 24px;
+  display: block;
+}
+
+/* Thumbnails */
+.thumbnails {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.thumbnails .is-active {
+  opacity: 1;
+}
+
+.thumbnails img {
+  border-radius: 12px;
+  height: 115px;
+  object-fit: cover;
+}
+
+/* ---- RIGHT: PRODUCT INFO ---- */
+.product-info-wrapper {
+  width: 50%;
+}
+
+.product-stars {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.product-stars img {
+  height: 19px;
+  width: 97px;
+}
+
+.product-title-price{
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 5px 0 10px;
+}
+
+.product-subtitle {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 18px;
+}
+
+.product-price-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.price-current {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.price-old {
+  text-decoration: line-through;
+  color: #b7b7b7;
+  font-size: 20px;
+}
+
+.save-badge {
+  background: #A40000;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Bullets */
+.feature-list {
+  margin: 20px 0;
+}
+.feature-item {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 17px;
+}
+
+.feature-item svg {
+  width: 20px;
+  height: 20px;
+  color: black;
+}
+
+/* Stock */
+.stock-badge {
+  background: #f0f9f0;
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.stock-dot {
+  width: 12px;
+  height: 12px;
+  background: #4CAF50;
+  border-radius: 50%;
+}
+
+/* Variants */
+.color-selector {
+  margin: 25px 0 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.variant-swatches {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.swatch {
+  width: 39px;
+  height: 39px;
+  border-radius: 50%;
+  /* border: 3px solid transparent; */
+  cursor: pointer;
+  /* Ellipse 52 */
+
+/* position: absolute;
+width: 41px;
+height: 41px;
+left: 773px;
+top: 684px;
+
+background: linear-gradient(180deg, #824F16 0%, #ECB564 100%);
+
+
+/* Ellipse 54 */
+
+/* box-sizing: border-box;
+
+position: absolute;
+width: 53px;
+height: 53px;
+left: 767px;
+top: 678px;
+
+border: 2px solid #000000; */ */
+
+}
+
+.swatch.active {
+  border-color: black;
+}
+
+/* Add to Cart */
+.add-to-cart-btn {
+  margin-top: 25px;
+  width: 100%;
+  background: black;
+  color: white;
+  padding: 18px;
+  border-radius: 60px;
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+}
+
+/* Payment icons */
+.payment-icons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.payment-icons img {
+  height: 20px;
+}
+
+/* Testimonial Box */
+.testimonial-box {
+  background: white;
+  border: 1px solid #eee;
+  padding: 20px;
+  border-radius: 14px;
+  margin: 25px 0;
+}
+
+.review-stars{
+    display: flex;
+    gap: 2px;
+}
+
+.testimonial-author {
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+/* Accordion */
+.accordion-item {
+  border-bottom: 1px solid #e3e3e3;
+  padding: 18px 0;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.accordion-content {
+  display: none;
+  padding: 10px 0;
+  line-height: 1.6;
+}
+
+.tick-img{
+    width: 24px;
+    height: 24px;
+}
+
+/* Important Note Box */
+.note-box {
+  background: #FAF6ED;
+  padding: 20px;
+  border-radius: 14px;
+  margin-top: 25px;
+}
+
+.note-title {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+</style>
+
+<section class="product-page-container">
+
+  <!-- LEFT SECTION -->
+  <div class="product-gallery-wrapper">
+
+    <!-- ⭐ BEST SELLER BADGE -->
+    <div class="best-seller-badge">
+      <div class="best-seller-dot"></div>
+      Best Seller
+    </div>
+
+    {% assign media = product.media %}
+
+    <!-- Main Slider -->
+    <div id="ProductMainSplide-{{ section.id }}" class="splide">
+      <div class="splide__track ">
+        <ul class="splide__list">
+          {% for item in media %}
+            <li class="splide__slide product-img-main">
+            <img src="{{ item | image_url: width: 1500}}" alt="Product Image" width="100%" height="auto">  
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Thumbnails -->
+    <div id="ProductThumbsSplide-{{ section.id }}" class="splide product-thumbs" style="margin-top: 15px;">
+      <div class="splide__track">
+        <ul class="splide__list">
+          {% for item in media %}
+            <li class="splide__slide thumbnails">
+              {{ item | image_url: width: 300 | image_tag }}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- RIGHT SECTION -->
+  <div class="product-info-wrapper">
+
+    <!-- Reviews -->
+    <div class="product-stars">
+      <img src="{{ section.settings.trust_stars |  image_url: width: 97 }}" width="97" height="19" class="trust-stars">
+      <strong>4.5 Stars</strong> | Based on 500+ reviews
+    </div>
+<div class="product-title-price">
+    <!-- Title -->
+     <div class="title">
+    <h1 class="product-title">{{ product.title }}</h1>
+    <h3>{{ section.settings.subtitle }}</h3>
+    </div>
+
+    <!-- Subtitle -->
+    
+
+    <!-- Price Row -->
+    <div class="product-price-wrapper">
+      <div class="price-current">{{ product.price | money }}</div>
+
+      {% if product.compare_at_price > product.price %}
+        <div class="price-old">{{ product.compare_at_price | money }}</div>
+        <div class="save-badge">
+          SAVE {{
+            product.compare_at_price | minus: product.price | money_without_trailing_zeros
+          }}
+        </div>
+      {% endif %}
+    </div>
+</div>
+    <!-- Feature List -->
+    <div class="feature-list">
+      {% for bullet in section.blocks %}
+        {% if bullet.type == "bullet" %}
+          <div class="feature-item">
+            <img src="{{ bullet.settings.tick_image |  image_url: width: 24 }}" alt="" width="24px" height="24px" class="tick-img"> {{ bullet.settings.text }}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <!-- Stock Notice -->
+    <div class="stock-badge">
+      <div class="stock-dot"></div>
+      <strong>In Stock:</strong> Limited Stock! Order today and get delivered in 2–3 days
+    </div>
+
+    <!-- Variant Selector -->
+    {% if product.variants.size > 1 %}
+      <div class="color-selector">Choose color:</div>
+
+      <div class="variant-swatches">
+        {% for variant in product.variants %}
+          <div class="swatch"
+               data-variant="{{ variant.id }}"
+               style="background: linear-gradient(180deg, #824F16 0%, #ECB564 100%);
+;">
+          </div>
+        {% endfor %}
+      </div>
+
+      <form method="post" action="{{ routes.cart_add_url }}">
+        <input type="hidden" name="id" id="selected-variant-{{ section.id }}" value="{{ product.variants.first.id }}">
+        <button type="submit" class="add-to-cart-btn">
+          Add to cart {{ product.price | money_without_trailing_zeros }}
+        </button>
+      </form>
+
+    {% endif %}
+
+    <!-- Payment Icons -->
+    <div class="payment-icons">
+      
+                   <img src="{{ section.settings.payment_image |  image_url: width: 34 }}" alt=""  width="24" height="20">
+                   <img src="{{ section.settings.payment_image |  image_url: width: 34 }}" alt="" width="24" height="20">
+                   <img src="{{ section.settings.payment_image |  image_url: width: 34 }}" alt="" width="24" height="20">
+                   <img src="{{ section.settings.payment_image |  image_url: width: 34   }}" alt="" width="24" height="20">
+                   <img src="{{ section.settings.payment_image |  image_url: width: 34 }}" alt="" width="24" height="20">
+                   <img src="{{ section.settings.payment_image |  image_url: width: 34 }}" alt="" width="24" height="20">
+                   <img src="{{ section.settings.payment_image |  image_url: width: 34}}" alt="" width="24" height="20">
+                   <img src="{{ section.settings.payment_image |  image_url: width: 34 }}" alt="" width="24" height="20">
+                 
+    </div>
+
+    <!-- Testimonial -->
+     {% for block in section.blocks %}
+        {% if block.type == 'testimonial_section' %}
+    <div class="testimonial-box">
+      <div class="review-stars">
+        {% assign full_stars = block.settings.rating | floor %}
+        {% assign has_half_star = block.settings.rating | modulo: 1 %}
+        {% for i in (1..full_stars) %}
+          <svg class="star full" viewBox="0 0 24 24" width="16" height="16" fill="#FACC15" aria-label="Full star"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.884 1.468 8.31L12 18.896l-7.404 4.604 1.468-8.31L0 9.306l8.332-1.151z"/></svg>
+        {% endfor %}
+        {% if has_half_star == 0.5 %}
+          <svg class="star half" viewBox="0 0 24 24" width="16" height="16" aria-label="Half star">
+            <defs>
+              <linearGradient id="half">
+                <stop offset="50%" stop-color="#FACC15"/>
+                <stop offset="50%" stop-color="#E5E7EB"/>
+              </linearGradient>
+            </defs>
+            <path fill="url(#half)" d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.884 1.468 8.31L12 18.896l-7.404 4.604 1.468-8.31L0 9.306l8.332-1.151z"/>
+          </svg>
+        {% endif %}
+      </div> 
+      <p>{{ block.settings.review_text2 }}</p>
+      <div class="testimonial-author">{{ block.settings.reviewer_name2 }}</div>
+    </div>
+        {% endif %}
+     {% endfor %}
+    <!-- Accordion Blocks -->
+    {% for block in section.blocks %}
+      {% if block.type == "accordion" %}
+        <div class="accordion-item" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">
+          {{ block.settings.title }}
+        </div>
+        <div class="accordion-content">
+          {{ block.settings.content }}
+        </div>
+      {% endif %}
+    {% endfor %}
+
+    <!-- Important Note -->
+    <div class="note-box">
+      <div class="note-title">Important Note:</div>
+      Authentic Calmi Ring is exclusively sold on our official website. Watch out for scams on Amazon or other platforms.
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var main = new Splide('#ProductMainSplide-{{ section.id }}', {
+    type: 'loop',
+    perPage: 1,
+    pagination: true,
+    arrows: true,
+    classes: {
+		arrows: 'splide__arrows product-arrows',
+		arrow : 'splide__arrow arrows-style',
+		prev  : 'splide__arrow--prev prev-svg2',
+		next  : 'splide__arrow--next next-svg2',
+        pagination: 'splide__pagination custom-pagination',
+		page      : 'splide__pagination__page active-page',
+  });
+
+  var thumbs = new Splide('#ProductThumbsSplide-{{ section.id }}', {
+    fixedWidth: 128,
+    fixedHeight: 117,
+    gap: 10,
+    isNavigation: true,
+    pagination: false,
+    arrows: false,
+    focus: 'center',
+  });
+
+  main.sync(thumbs);
+  main.mount();
+  thumbs.mount();
+
+  /* Variant Selector */
+  document.querySelectorAll('.swatch').forEach(swatch => {
+    swatch.addEventListener('click', function () {
+
+      document.querySelectorAll('.swatch').forEach(s => s.classList.remove('active'));
+      swatch.classList.add('active');
+
+      document.getElementById('selected-variant-{{ section.id }}').value = swatch.dataset.variant;
+    });
+  });
+});
+</script>
+
+
+
+{% schema %}
+{
+  "name": "Full Product Page",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Wellness you can wear."
+    },
+    {
+        "type": "image_picker",
+        "id": "payment_image",
+        "label": "Payment Images"
+    },
+    {
+        "type": "image_picker",
+        "id": "trust_stars",
+        "label": "Trust Stars"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "bullet",
+      "name": "Bullet Point",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Bullet Text" },
+        { "type": "image_picker", "id": "tick_image", "label": "Tick Image"}
+      ]
+    },
+    {
+      "type": "accordion",
+      "name": "Accordion Tab",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title" },
+        { "type": "textarea", "id": "content", "label": "Content" }
+      ]
+    },
+    {
+                "type": "testimonial_section",
+                "name": "Testimonial Section",
+                "settings": [
+                    {
+                        "type": "range",
+                        "id": "rating",
+                        "label": "Star Rating",
+                        "min": 1,
+                        "max": 5,
+                        "step": 0.5,
+                        "default": 5
+                    },
+                    {
+                        "type": "textarea",
+                        "id": "review_text2",
+                        "label": "Review Text"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "profile_photo2",
+                        "label": "Profile Image"
+                    },
+                    {
+                        "type": "text",
+                        "id": "reviewer_name2",
+                        "label": "Reviewer Name",
+                        "default": "-Jessica L."
+                    }
+                ]
+            }
+  ],
+  "max_blocks": 20,
+  "presets": [
+    {
+        "name": "Product Gallery and Info"
+    }
+  ]
+}
+{% endschema %}
+
