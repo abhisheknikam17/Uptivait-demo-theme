@@ -2,8 +2,8 @@
 /* 2 Column Layout */
 .product-page-container {
   display: flex;
-  gap: 60px;
-  align-items: center;
+  gap: 50px;
+  align-items: top;
   width: 85%;
   margin: auto;
   border-top: 1px solid #0000000F;
@@ -41,11 +41,42 @@
 }
 
 /* Main Splide Images */
+.prod-container{
+    gap: 10px;
+}
+.product-img-main{
+     width: 100%;
+     max-width: 100%;
+     object-fit: cover;
+}
 .product-img-main img{
     width: 100%;
-  max-width: 570px;
+    max-height: 620px;
+  max-width: 100%;
   border-radius: 24px;
+  object-fit: cover;
   display: block;
+}
+.splide__track{
+    overflow: hidden;
+}
+.custom-pagination2{
+    color: #fff; 
+  
+ 
+}
+.active-page2{
+    background: #fff;
+    transition: background 0.2s linear;
+}
+
+.active-page2.is-active{
+    margin: 0 14px;
+width: 38px;
+height: 6px;
+background: #BD9162;
+border-radius: 24px;
+
 }
 
 /* Thumbnails */
@@ -62,6 +93,20 @@
   border-radius: 12px;
   height: 115px;
   object-fit: cover;
+}
+
+
+/* Progress Bar */
+.progress-container {
+  background: #fff;
+}
+
+
+.product-progress {
+  background: #000000;
+  height: 3px;
+  transition: width 400ms ease;
+  width: 0;
 }
 
 /* ---- RIGHT: PRODUCT INFO ---- */
@@ -213,7 +258,7 @@ border: 2px solid #000000; */ */
   color: white;
   padding: 18px;
   border-radius: 60px;
-  font-size: 20px;
+  font-size: 16px;
   cursor: pointer;
   border: none;
 }
@@ -299,10 +344,10 @@ border: 2px solid #000000; */ */
     <!-- Main Slider -->
     <div id="ProductMainSplide-{{ section.id }}" class="splide">
       <div class="splide__track ">
-        <ul class="splide__list">
+        <ul class="splide__list prod-container">
           {% for item in media %}
             <li class="splide__slide product-img-main">
-            <img src="{{ item | image_url: width: 1500}}" alt="Product Image" width="100%" height="auto">  
+            <img src="{{ item | image_url: width: 1500}}" alt="Product Image" width="100%" height="100%">  
             </li>
           {% endfor %}
         </ul>
@@ -311,7 +356,7 @@ border: 2px solid #000000; */ */
 
     <!-- Thumbnails -->
     <div id="ProductThumbsSplide-{{ section.id }}" class="splide product-thumbs" style="margin-top: 15px;">
-      <div class="splide__track">
+      <div class="splide__track thumbs-cont">
         <ul class="splide__list">
           {% for item in media %}
             <li class="splide__slide thumbnails">
@@ -321,7 +366,9 @@ border: 2px solid #000000; */ */
         </ul>
       </div>
     </div>
-
+    <div class="my-carousel-progress progress-container" style="margin-top: 12px;">
+    <div class="my-carousel-progress-bar product-progress"></div>
+  </div>
   </div>
 
 
@@ -376,10 +423,16 @@ border: 2px solid #000000; */ */
 
     <!-- Variant Selector -->
     {% if product.variants.size > 1 %}
-      <div class="color-selector">Choose color:</div>
-
+        
+      <div class="color-selector">
+            <p><strong>Choose color: </strong>{{ product.variants.first.title }}</p>
+    </div>
+        
+        {% comment %} {% endfor %} {% endcomment %}
       <div class="variant-swatches">
+        
         {% for variant in product.variants %}
+        
           <div class="swatch"
                data-variant="{{ variant.id }}"
                style="background: linear-gradient(180deg, #824F16 0%, #ECB564 100%);
@@ -464,7 +517,7 @@ border: 2px solid #000000; */ */
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  var main = new Splide('#ProductMainSplide-{{ section.id }}', {
+  var main = new Splide('#ProductMainSplide-{{ section.id }}',{
     type: 'loop',
     perPage: 1,
     pagination: true,
@@ -474,8 +527,10 @@ document.addEventListener("DOMContentLoaded", function () {
 		arrow : 'splide__arrow arrows-style',
 		prev  : 'splide__arrow--prev prev-svg2',
 		next  : 'splide__arrow--next next-svg2',
-        pagination: 'splide__pagination custom-pagination',
-		page      : 'splide__pagination__page active-page',
+        pagination: 'splide__pagination custom-pagination2',
+		page      : 'splide__pagination__page active-page2',
+},
+
   });
 
   var thumbs = new Splide('#ProductThumbsSplide-{{ section.id }}', {
@@ -488,9 +543,47 @@ document.addEventListener("DOMContentLoaded", function () {
     focus: 'center',
   });
 
+
   main.sync(thumbs);
   main.mount();
   thumbs.mount();
+
+
+//    Progress Bar
+
+// const progressBar = document.querySelector('.product-progress');
+
+//   main.on('mounted move', function () {
+//     const end = main.Components.Controller.getEnd() + 1; 
+//     const current = main.index + 1;
+
+//     const rate = Math.min(current / end, 1);
+//     progressBar.style.width = (rate * 100) + '%';
+//   });
+
+// });
+
+/* Progress Bar 2 */
+
+const progressBar = document.querySelector('.product-progress');
+
+function updateProgress() {
+  const end = main.Components.Controller.getEnd() + 1; 
+  const current = main.index + 1;
+  const rate = Math.min(current / end, 1);
+  progressBar.style.width = (rate * 100) + '%';
+}
+
+// Run on slide change
+main.on('move', updateProgress);
+
+// Run once main slider fully mounts
+main.on('mounted', updateProgress);
+
+// EXTRA: Force initial update after DOM + main.mount()
+setTimeout(updateProgress, 10);
+
+});
 
   /* Variant Selector */
   document.querySelectorAll('.swatch').forEach(swatch => {
@@ -502,7 +595,7 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById('selected-variant-{{ section.id }}').value = swatch.dataset.variant;
     });
   });
-});
+
 </script>
 
 
